@@ -1,0 +1,4 @@
+<?
+class xGuests extends Items{
+}
+?>

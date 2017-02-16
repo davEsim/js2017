@@ -1,0 +1,4 @@
+<?
+class xTips extends Items{
+}
+?>

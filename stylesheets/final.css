@@ -1,0 +1,451 @@
+
+#frame{
+	/*background-color:white;
+	margin: 0 auto;
+	max-width: 62.5rem;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, .3);	*/
+}
+
+/*
+  .row{border:1px dotted red}
+  .columns{border:1px dashed green}
+*/
+/* line 12, ../scss/final.scss */
+.button.alert {
+  background-color: #C8102E;
+}
+
+
+/* line 15, ../scss/final.scss */
+i {
+  font-size: 2.5em;
+}
+
+/* line 18, ../scss/final.scss */
+.socialIcon {
+  margin-left: .5em;
+}
+
+#festDate{
+	text-transform: uppercase;
+	font-weight: 700;	
+}
+#submitTime{
+	background-color:#86E80C !important;
+	font-weight: 700;	
+	text-transform: uppercase;
+  	font-size: 1.1em;
+	padding:1em;
+	color:#1a171b;
+}
+	#submitTime span{
+	}
+
+
+/* line 21, ../scss/final.scss */
+.credits {
+  font-size: .9em;
+  color: #888;
+  line-height: 1.2em;
+}
+
+/* line 26, ../scss/final.scss */
+.detailImgBox {
+  float: right;
+}
+
+/* line 29, ../scss/final.scss */
+a {
+  color: #007fff;
+}
+
+.lnr{
+	font-size: 1.2em !important;
+}
+
+/* line 33, ../scss/final.scss */
+a:hover {
+  color: #006bd7;
+}
+
+/* line 39, ../scss/final.scss */
+body {
+  /*background-color:#f9f9f9;
+  background-image: url(../imgs/bg.png);
+  background-position:center center;
+  background-attachment: fixed;*/
+}
+
+/* line 44, ../scss/final.scss */
+#head {
+  /*margin-top: 1em;*/
+  padding-top:1em;
+  margin-bottom: .2em;
+}
+
+/* line 48, ../scss/final.scss */
+#mainMenu {
+  margin-top: .5em;
+}
+
+/* line 51, ../scss/final.scss */
+.top-bar, .top-bar-section ul li, section li:not(.has-form) a:not(.button) {
+  background-color: #1a171b !important;
+}
+
+/* line 54, ../scss/final.scss */
+#secondMenu div, .top-bar-section ul li.active a {
+  background-color: #007fff !important;
+}
+
+/* line 57, ../scss/final.scss */
+#secondMenu {
+  padding: .95em;
+  padding-top: 0;
+}
+/* line 62, ../scss/final.scss */
+#secondMenu div {
+  background-color: #008CBA;
+}
+/* line 66, ../scss/final.scss */
+#secondMenu ul {
+  margin: 0;
+  padding: .3em 0;
+}
+/* line 70, ../scss/final.scss */
+#secondMenu li {
+  display: inline-block;
+  padding-left: 0;
+  margin-left: 0;
+  padding-right: 1.5em;
+  list-style-type: none;
+  color: #0078A0;
+}
+/* line 77, ../scss/final.scss */
+#secondMenu li a {
+  color: white;
+}
+
+/* line 82, ../scss/final.scss */
+.contain-to-grid {
+  background-color: #1a171b;
+}
+
+/* line 88, ../scss/final.scss */
+.top-bar-section ul li a {
+  text-transform: uppercase;
+  font-size: .9em;
+  font-weight:700;
+}
+/* line 93, ../scss/final.scss */
+.top-bar-section ul li li a {
+  font-size: .8em;
+}
+/* line 99, ../scss/final.scss */
+.top-bar-section .right {
+  padding-right: .5em;
+}
+/* line 102, ../scss/final.scss */
+.top-bar-section i {
+  font-size: 1.5em;
+}
+
+/* line 106, ../scss/final.scss */
+.loginButton {
+  text-transform: uppercase;
+}
+
+/* line 110, ../scss/final.scss */
+.section {
+  margin-top: 1em;
+  background-image: url("../imgs/bg-section.png");
+  background-position: center center;
+  background-repeat: repeat-x;
+  text-align: center;
+}
+/* line 117, ../scss/final.scss */
+.section span {
+  background-color: black;
+  color: white;
+  font-size: .8em;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: .1em .5em;
+}
+
+/* line 129, ../scss/final.scss */
+#rightCol {
+  padding-top: 3em;
+  margin-top: 1em;
+}
+/* line 134, ../scss/final.scss */
+#rightCol #sideMenu li {
+  list-style-type: none;
+  margin-bottom: 1px;
+  padding: .7em 1em;
+  background-color: #eee;
+}
+
+/* line 145, ../scss/final.scss */
+.orbit-container .orbit-slides-container > * .orbit-caption {
+  background-color: rgba(255, 255, 255, .9);
+  width: 70%;
+  margin-left: .7em;
+  margin-bottom: .7em;
+}
+/* line 151, ../scss/final.scss */
+.orbit-container .orbit-slides-container > * .orbit-caption a {
+  color: #007fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size:.9em;
+}
+
+/* line 156, ../scss/final.scss */
+.buttons a {
+  display: block;
+  margin: 0;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+/* line 163, ../scss/final.scss */
+.buttons a h3, .buttons a p {
+  color: white;
+}
+
+/* line 167, ../scss/final.scss */
+.bt1 {
+  background-color: #007fff;
+}
+
+/* line 170, ../scss/final.scss */
+.bt2 {
+  background-color: #006bd7;
+}
+
+/* line 173, ../scss/final.scss */
+.bt3 {
+  background-color: #005dba;
+}
+
+/* line 177, ../scss/final.scss */
+input.nS, input.nI {
+  display: none;
+}
+
+/* line 178, ../scss/final.scss */
+.homeMainForm {
+  border-top: 1px solid #ddd;
+  padding-top: 2em;
+}
+
+/* line 182, ../scss/final.scss */
+.socialFeeds {
+  border-left: 1px solid #ddd;
+}
+
+@media only screen and (min-width: 40.063em) {
+  /* line 190, ../scss/final.scss */
+  .top-bar-section .left li .wideMenuRegions {
+    left: -9px;
+  }
+
+  /* line 194, ../scss/final.scss */
+  .wideMenuRegions {
+    width: 50.5rem !important;
+    background-color: #1a171b !important;
+  }
+  /* line 197, ../scss/final.scss */
+  .wideMenuRegions li {
+    display: inline !important;
+    width: 180px !important;
+  }
+}
+/* line 205, ../scss/final.scss */
+.regionTitle, .regionTitle h3 {
+  color: #001489;
+}
+
+/* line 209, ../scss/final.scss */
+.regionLogoWrapper {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+/* line 217, ../scss/final.scss */
+.keysList .label, .alphaList .label, .regionsList .label {
+  margin-right: .5em;
+}
+
+/* line 222, ../scss/final.scss */
+.filmSocial, .csfd {
+  padding: 1em;
+}
+
+/* line 226, ../scss/final.scss */
+.csfd {
+  background-image: url("../imgs/csfd.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+/* line 239, ../scss/final.scss */
+.split.button {
+  width: 100%;
+}
+/* line 241, ../scss/final.scss */
+.split.button.facebook {
+  background: #3b5998;
+  text-transform: uppercase;
+}
+/* line 244, ../scss/final.scss */
+.split.button.facebook span {
+  background: #2d4373;
+}
+/* line 246, ../scss/final.scss */
+.split.button.facebook span:after {
+  border: none;
+  font-family: "foundation-icons";
+  content: "\f1c4";
+  font-size: 2rem;
+  line-height: 0.25rem;
+  margin-left: -0.7rem;
+}
+/* line 256, ../scss/final.scss */
+.split.button.twitter {
+  background: #55acee;
+  text-transform: uppercase;
+}
+/* line 259, ../scss/final.scss */
+.split.button.twitter span {
+  background: #2795e9;
+}
+/* line 261, ../scss/final.scss */
+.split.button.twitter span:after {
+  border: none;
+  font-family: "foundation-icons";
+  content: "\f1e4";
+  font-size: 2rem;
+  line-height: 0.25rem;
+  margin-left: -0.7rem;
+}
+/* line 271, ../scss/final.scss */
+.split.button.google {
+  background: #d50f25;
+  text-transform: uppercase;
+}
+/* line 274, ../scss/final.scss */
+.split.button.google span {
+  background: #a50c1d;
+}
+/* line 276, ../scss/final.scss */
+.split.button.google span:after {
+  border: none;
+  font-family: "foundation-icons";
+  content: "\f1ca";
+  font-size: 2rem;
+  line-height: 0.25rem;
+  margin-left: -0.7rem;
+}
+/* line 287, ../scss/final.scss */
+.split.button.left-icon {
+  text-align: right;
+}
+/* line 289, ../scss/final.scss */
+.split.button.left-icon span {
+  left: 0;
+}
+
+/* line 295, ../scss/final.scss */
+.auth-plain {
+  border-right: 1px solid #ddd;
+}
+/* line 297, ../scss/final.scss */
+.auth-plain i {
+  font-size: 2em;
+}
+
+/* line 304, ../scss/final.scss */
+.button.tiny {
+  padding: .5em;
+}
+
+/* line 308, ../scss/final.scss */
+.visitorProgramTable {
+  border: 0px;
+}
+/* line 311, ../scss/final.scss */
+.visitorProgramTable tr {
+  background-color: white !important;
+}
+
+/* line 315, ../scss/final.scss */
+.visitorProgramDay {
+  background-color: #e2e2e2;
+}
+
+/* line 319, ../scss/final.scss */
+.visitorProgramFilms {
+  border-bottom: 1px solid #e2e2e2;
+}
+/* line 322, ../scss/final.scss */
+.visitorProgramFilms p {
+  margin: 0;
+  clear: both;
+}
+/* line 326, ../scss/final.scss */
+.visitorProgramFilms img {
+  max-width: 100px;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  float: left;
+}
+/* line 332, ../scss/final.scss */
+.visitorProgramFilms table {
+  border: 0px;
+}
+
+/* line 337, ../scss/final.scss */
+.addeventatc, .addeventatc:hover {
+  font-size: .8em;
+  border: 0;
+}
+
+/* line 346, ../scss/final.scss */
+.noD {
+  display: none !important;
+}
+
+/* line 349, ../scss/final.scss */
+.marginTop1 {
+  margin-top: 1em;
+}
+
+/* line 352, ../scss/final.scss */
+.marginBottom1 {
+  margin-bottom: 1em;
+}
+
+/* line 355, ../scss/final.scss */
+.paddingTop1 {
+  padding-top: 1em;
+}
+
+/* line 358, ../scss/final.scss */
+.paddingBottom1 {
+  padding-bottom: 1em;
+}
+
+/* line 362, ../scss/final.scss */
+td {
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 40em) {
+  /* line 370, ../scss/final.scss */
+  .auth-plain {
+    border: 0;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #ddd;
+  }
+}

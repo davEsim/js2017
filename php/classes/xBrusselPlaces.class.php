@@ -1,0 +1,5 @@
+<?
+class xBrusselPlaces extends Items{
+	
+}
+?>

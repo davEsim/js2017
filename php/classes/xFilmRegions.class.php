@@ -1,0 +1,6 @@
+<?
+class xFilmRegions extends Items{
+	
+	
+}
+?>

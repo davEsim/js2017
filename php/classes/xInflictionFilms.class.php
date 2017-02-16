@@ -1,0 +1,4 @@
+<?
+class xInflictionFilms extends Items{
+}
+?>

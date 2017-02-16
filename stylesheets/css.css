@@ -1,0 +1,135 @@
+
+.fb-page{
+    margin-right: 1em;
+
+}
+.block{
+    padding: .5em;
+}
+
+.paddingTop2{
+    padding-top: 2rem;
+}
+
+.section{
+    background-image: url("../imgs/layout/bg-section.png");
+    background-position: center left;
+    background-repeat: repeat-x;
+    margin: 1em 0;
+    text-align: center;
+}
+    .section span{
+        background-color: white;
+
+        padding: 1em;
+        text-transform: uppercase;
+        font-weight: 800;
+
+    }
+h1{
+    margin-bottom: .5em;
+}
+    h1 img{
+        position: relative;
+        top:-7px;
+    }
+.regionContact h6{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+#inflictionsPage .tabs-title{
+    max-width: 20%;
+
+}
+
+#inflictionsPage .map{
+    max-height: 400px;
+}
+
+#inflictionsPage .tabs-title>a{
+
+    min-height: 200px;
+}
+#inflictionsPage .accordion2 .tabs-title>a{
+    min-height: 100px;
+}
+#inflictionsPage .inflictionTheatres img, .inflictionIconsProgram img{
+    width: 2rem;
+    height: 2rem;
+}
+
+#inflictionsPage .tabs-title img, #inflictionsPage .accordion-item img, .inflictionIconsFilmsAZVideo img {
+    height: 3rem;
+    width: 3rem;
+    margin-bottom: 1rem;
+}
+
+.tabs{
+    border: 0;
+}
+
+.tabs-panel{
+    padding-top: 2em;
+    background-color: #f2f2f2;
+}
+
+.off-canvas{
+    padding: 2rem;
+
+}
+
+#etrButton {
+    width: .8em;
+    height: .8em;
+    cursor: pointer;
+    cursor: hand;
+}
+.inflictionVideoButton {
+    text-transform: uppercase;
+}
+.inflictionVideoButton i {
+    margin-bottom: .5em;
+    display: block;
+    font-size: 3em;
+}
+#inflictionVideo{
+    display: none;
+}
+
+#ETR, #fullNoETRtext{
+    display: none;
+}
+
+#registrationForm{
+    margin-top: 0;
+}
+.card img{
+
+}
+.card h5, .card p{
+    margin: .5rem;
+}
+
+.listing h5{
+    margin-top: .5em;
+}
+
+.credits{
+    font-size: .9rem;
+    line-height: 1.3rem;
+}
+
+table tbody td{
+    padding: .5em;
+    margin: 0;
+    border: 0;
+}
+
+.accordionScreenings .tabs-title a, .accordionScreeningsTheatres .tabs-title a{
+    font-size: 1.2rem;
+}
+.has-tip{
+    border: 0;
+}
+

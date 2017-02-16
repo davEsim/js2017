@@ -1,0 +1,4 @@
+<?
+class xInflictions extends Items{
+}
+?>

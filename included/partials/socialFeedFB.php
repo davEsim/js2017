@@ -1,0 +1,2 @@
+<!-- FB -->
+<div class="fb-page" data-href="https://www.facebook.com/jedensvet/" data-tabs="timeline" data-height="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/jedensvet/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/jedensvet/">Jeden svět / One World</a></blockquote></div>

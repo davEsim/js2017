@@ -1,0 +1,4 @@
+<?
+class xJuryMembers extends Items{
+} 
+?>

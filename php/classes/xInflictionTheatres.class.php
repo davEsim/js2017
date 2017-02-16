@@ -1,0 +1,4 @@
+<?
+class xInflictionTheatres extends Items{
+}
+?>

@@ -1,0 +1,4 @@
+<?
+class xRegionCities extends Items{
+}
+?>

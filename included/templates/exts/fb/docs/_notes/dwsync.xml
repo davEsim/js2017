@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="AccessToken.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="example_access_token_from_canvas.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="example_access_token_from_javascript.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="example_access_token_from_page_tab.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="example_batch_request.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="example_batch_upload.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="example_facebook_login.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="example_pagination_basic.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="example_post_links.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="example_retrieve_user_profile.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="example_upload_photo.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="example_upload_video.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="Facebook.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="FacebookApp.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="FacebookBatchRequest.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="FacebookBatchResponse.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="FacebookCanvasHelper.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="FacebookClient.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="FacebookFile.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="FacebookJavaScriptHelper.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="FacebookPageTabHelper.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="FacebookRedirectLoginHelper.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="FacebookRequest.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="FacebookResponse.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="FacebookResponseException.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="FacebookSDKException.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="FacebookVideo.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="GraphEdge.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="GraphNode.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="PersistentDataInterface.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="PseudoRandomStringGeneratorInterface.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="sdk_downloads.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="sdk_getting_started.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="sdk_landing_page.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="sdk_reference.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="SignedRequest.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+<file name="UrlDetectionInterface.fbmd" server="217.198.122.48//public_html/" local="130808273360000000" remote="130928338200000000" />
+</dwsync>

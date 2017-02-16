@@ -1,0 +1,4 @@
+<?
+class xEditions extends Items{
+}
+?>
