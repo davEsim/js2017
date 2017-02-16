@@ -1,4 +1,69 @@
+<style>
+    #screeningList table{
+        border:0;
+        border-collapse:collapse;
+        width:100%;
+    }
+    #screeningList tr{
+        background-color:white;
+        border-bottom: 1px dotted #ddd;
+    }
+    #screeningList tr .blockTable tr{
+        border:0;
+    }
+    #screeningList tr.active{
+        border:0px;
+        background-color:#eee;
+    }
+    #screeningList tr.active span.filmTitle{
+        font-size:1.3em;
+        font-weight:bold;
+    }
+    #screeningList td{
+        vertical-align:top;
+        text-align:left;
+        padding-left:0;
+        font-size:1em;
+        font-weight:300;
+    }
+    .time{
+        width:50px;
+    }
+    #screeningList td td{
+        padding-left:0;
+    }
+    #screeningList .extraScreeningTitle{
+        text-transform:uppercase;
+        /*font-weight:bold;	*/
+    }
+    #screeningList span.label{
+        text-transform: uppercase !important;
+    }
+    .tabs-content{
+        min-height:500px;
+    }
 
+    .filmDetailContent{
+        display:none;
+    }
+    .filmDetailContent p, .filmDetailContent h3{
+        margin-left:50px;
+    }
+    #screeningList tr.filmDetailContent {
+        background-color:#eee;
+    }
+    .filmDetailContent img{
+        float:right;
+        margin-left:3em;
+        max-width:400px;
+    }
+    .filmDetailContent p{
+        font-size:1em;
+    }
+    .filmDetailContent .button{
+        margin:0 !important;
+    }
+</style>
 
 <div class="row">
 	<div class="medium-12 columns">
@@ -72,7 +137,7 @@
                     <a href="#" class="accordion-title"><?=$tab?></a>
                     <div class="accordion-content" data-tab-content>
                             <div class="content <?=($screeningsDate["date"]==$showDate)?"active":"";?>" id="panel<?=$i?>">
-                                <h3><?=invertDatumFromDB($screeningsDate["date"],1)?></h3>
+                                <h2><?=invertDatumFromDB($screeningsDate["date"],1)?></h2>
                                 <table>
                                     <?php
                                     $dayScreenings = $screenings->listingByDay($screeningsDate["date"]);
