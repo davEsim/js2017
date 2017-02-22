@@ -1,7 +1,7 @@
 ﻿
 	var customIcons = {
       cinema: {
-        icon: 'https://www.jedensvet.cz/dev/imgs/icons/marker.png',
+        icon: 'https://www.jedensvet.cz/2017/imgs/icons/marker.png',
         shadow: 'https://labs.google.com/ridefinder/images/mm_20_shadow.png'
       },
       bar: {
@@ -29,7 +29,7 @@
       var infoWindow = new google.maps.InfoWindow;
 	 	
       // Change this depending on the name of your PHP file
-      downloadUrl("https://www.jedensvet.cz/dev/php/ext/googleMapsXML.php", function(data) {
+      downloadUrl("https://www.jedensvet.cz/2017/php/ext/googleMapsXML.php", function(data) {
 
         var xml = data.responseXML;
         var markers = xml.documentElement.getElementsByTagName("marker");

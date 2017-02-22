@@ -45,7 +45,7 @@ include_once("../../data/private/2017/config.php");
     <!-- AddEvent - end -->
     <? //if($title == "regiony"){?>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRPOLK_IVptgP_ri5zcCg1ywKpelEkLd0" type="text/javascript"></script>
-	<script type="text/javascript" src="<?=$_ENV["serverPath"]?>js/googleMaps.js?v=7"></script>
+	<script type="text/javascript" src="<?=$_ENV["serverPath"]?>js/googleMaps.js?v=<?=filemtime("js/googleMaps.js")?>"></script>
     <? //} ?>
     <!-- Facebook Pixel krávovina -->
 	<script>

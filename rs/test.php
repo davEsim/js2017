@@ -11,6 +11,7 @@
 <?="Olomouc: ".md5("Code1353")."<br>"?>
 <?="Ostrava: ".md5("Code1551")."<br>"?>
 <?="Plzen: ".md5("Code1331")."<br>"?>
+<?="Pavlovsky: ".md5("Knihomol17")."<br>"?>
 
 
 <div id="main">
