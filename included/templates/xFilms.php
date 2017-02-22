@@ -81,7 +81,7 @@
                     <?=$activeItem["synopsys$lang"]?><br/>
 
                     <?
-                    echo $activeItem["id"];
+
                     $filmParams = $films->getParams($activeItem["id"]);
                     if($filmParams["descr$lang"]){
                         echo $filmParams["descr$lang"];
