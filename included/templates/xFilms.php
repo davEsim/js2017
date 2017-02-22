@@ -128,7 +128,7 @@
                                                 if(count($dayScreeningGuests)){
                                                     $guestsString = "";
                                                     foreach($dayScreeningGuests AS $dayScreeningGuest){
-                                                        $guestsString.="<strong>".$dayScreeningGuest["fName"]." ".$dayScreeningGuest["sName"]."</strong>, ".$dayScreeningGuest["profession$lang"]."<br>";
+                                                        $guestsString.="".$dayScreeningGuest["fName"]." ".$dayScreeningGuest["sName"].", ".$dayScreeningGuest["profession$lang"]."";
                                                     }
                                                     ?>
                                                     

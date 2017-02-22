@@ -56,9 +56,9 @@
 	<div class="medium-12 columns text-center">
     	<? 
 			if($lang == "CZ"){
-				echo "<a href='./partneri'>Další partneři</a>";
+				echo "<a href='".$_ENV["serverPath"]."partneri'>Další partneři</a>";
 			}else{
-				echo "<a href='./partners'>Other partners</a>";
+				echo "<a href='".$_ENV["serverPath"]."partners'>Other partners</a>";
 			}
 		?>
     </div>
