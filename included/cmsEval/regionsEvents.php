@@ -16,7 +16,7 @@ $regionEventsTypes = $regionEvents->types($regionCity);
 	<div class="medium-12 columns regionsList">
     	<?
 		foreach($regionEventsTypes AS $regionEventsType){
-			echo "<a class='label filter' data-type='type' data-value='".$regionEventsType["id_xRegionEventTypes"]."' data-city='$regionCity'>".$regionEventsType["xRegionEventTypes"]."</a>";
+			echo "<a class='small button filterEventRegion' data-type='type' data-value='".$regionEventsType["id_xRegionEventTypes"]."' data-city='$regionCity'>".$regionEventsType["xRegionEventTypes"]."</a>";
 		}
 		?>
     </div>
@@ -58,7 +58,7 @@ $regionEventsTypes = $regionEvents->types($regionCity);
 						    $eventPlace = $regionEvents->getRelRow($event["id_xRegionPlaces"], "xRegionPlaces");
 							echo "<div class='medium-4 columns end'>\n";
 										//echo getFirstMedia("xNews", $event["id"], 0, "", "", "img", "");
-										echo "<label class='secondary label'>".$event["xRegionEventTypes$lang"]."</label>";
+										echo "<label class='label'>".$event["xRegionEventTypes$lang"]."</label>";
 										echo "<h4><a href='".$_ENV["serverPath"].$_ENV["page"]."/".$event["eid"]."-".string2domainName($event["title"])."'>".$event["title"]."</a></h4>";
 										echo "<p>".showItemDateFromTo($event["datumFrom"], $event["datumTo"]);
 											if($event["time"]) echo " | ".$event["time"]."h.";
@@ -75,40 +75,3 @@ $regionEventsTypes = $regionEvents->types($regionCity);
 			?>
 	</div>
 </div><!--row-->
-<script type="text/javascript">
-	$(document).ready(function(){
-		$(".filter").on("click",function(event){ 
-			event.preventDefault();
-			$("#fullProgram").css("display", "block");
-			$('html, body').animate({
-				scrollTop: ($("#elementtoScrollToID").offset().top-100)
-			 }, 2000);
-	
-			
-			type = $(this).attr("data-type");
-			value = $(this).attr("data-value");
-			city = $(this).attr("data-city");
-			lang = "<?=$lang?>";
-	
-			$.ajax({
-				url:'../included/ajax/regionEventFilter.php', 
-				data:{type:type, value:value, city:city, lang:lang},
-				type:'GET',  
-				dataType: 'html',
-				beforeSend: function(){
-					$("#regionEventsFilterAjaxContent").append("<div class='ajaxLoading'><img src='imgs/ajax-loader.gif'> Loading...</div>").show(1000);
-				},
-				success: function(html, textSuccess){
-					$("#regionEventsFilterAjaxContent").html(html);
-					
-				},
-				complete: function(){
-				},
-				error: function(xhr, textStatus, errorThrown){	
-					alert("Nastala chyba "+errorThrown);
-				}
-			});
-		});
-	});
-
-</script>

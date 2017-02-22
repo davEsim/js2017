@@ -3,6 +3,7 @@
 		<?php
         $films = new xFilms($db, "xFilms");
 		$screenings = new xScreenings($db, "xScreenings");
+        $inflictionScreenings = new xScreenings($db, "xInflictionScreenings");
         $lang = $_ENV["lang"];
         //---- detail --------------------------------------------------------------------------
         if(is_numeric($itemId)){
@@ -67,7 +68,7 @@
                 <div class='medium-4 columns'>
 					<h1><?=$activeItem["title$lang"]?></h1>
                     <p class="credits">
-                       <strong><?=$activeItem["TITLE_ORIGINAL"]?></strong><br>
+                       <strong><?=($lang == "CZ")?$activeItem["titleEN"]:$activeItem["TITLE_ORIGINAL"]?></strong><br>
                        <?=$activeItem["DIRECTOR"]?><br>
                        <?=$activeItem["COUNTRY"]?> |&nbsp;<?=$activeItem["YEAR"]?> |&nbsp;<?=$activeItem["TIME"]?>&nbsp;min.
                     </p>
@@ -76,17 +77,19 @@
 					$filmTheme = $films->findItemsInRelations($activeItem["id"],"xFilmThemes");
 					$theme = new xFilmThemes($db, "xFilmThemes");
 					?>
-                    <p><?=__("Téma")?>: <a href="<?=$theme->getPath($filmTheme[0]["id"])?>"><?=$filmTheme[0]["name$lang"]?></a></p>
+                    <p><?=__("Kategorie")?>: <a href="<?=$theme->getPath($filmTheme[0]["id"])?>"><?=$filmTheme[0]["name$lang"]?></a></p>
                     <?=$activeItem["synopsys$lang"]?><br/>
-                    <br />
-                    <? 
-					  $filmParams = $films->getParams($activeItem["id"]);
-						  if($filmParams["descr$lang"]){
-							  echo $filmParams["descr$lang"];
-						  }
-					?>
+
+                    <?
+                    echo $activeItem["id"];
+                    $filmParams = $films->getParams($activeItem["id"]);
+                    if($filmParams["descr$lang"]){
+                        echo $filmParams["descr$lang"];
+                    }
+                    ?>
                 </div>
             </div>
+
             <div class="row">
                 <div class="medium-12 columns">
                 	<hr>
@@ -103,7 +106,6 @@
                                     <tr>
                                         <td><span style="white-space:nowrap"><?=invertDatumFromDB($filmScreening["date"],1)?></span> <?=substr($filmScreening["time"],0,-3)?></td>
                                         <td><?=$filmScreening["theatreTitle$lang"]?></td>
-                                        <td><?=strip_tags($filmScreening["address"])?></td>
                                         <td><? if(count($screenings->packageFilms($filmScreening["id_xFilms"]))>1){?><span class="label">Blok filmů</span><? }?></td>
                                         <td><? if($filmScreening["premiere$lang"]){?><span class="label"><?=$filmScreening["premiere$lang"]?></span><? }?></td>
                                         <td>
@@ -142,8 +144,11 @@
                                                     <a target="_blank" href="<?=$filmScreening["ticket$lang"]?>"><span class="success label"><?=($lang == "CZ")?"Vstupenky":"Tickets"?></span></a>
                                             <? }	?>
                                         </td>
-                                        <td nowrap>
-
+                                        <td class="inflictionIconsProgram" nowrap>
+                                            <?
+                                            $inflictions = $inflictionScreenings->findById($filmScreening["id"]);
+                                            inflictionIcons($inflictions["icons"]);
+                                            ?>
                                         </td>
                                     </tr>
 						  <?
@@ -180,11 +185,14 @@
                     </table>
                 </div>
               </div>
-              <div class="row">  
-                <div class="medium-12 columns">
+              <div class="row">
+                <div class="medium-8 columns">
+
+                </div>
+                <div class="medium-4 columns">
 
                       <h3>Sales</h3>
-                    <address>
+
                         <?=$activeItem["CATALOGUE_NAME"];?><br>
                         <?=$activeItem["CATALOGUE_COMPANY"];?><br>
                         <?=$activeItem["CATALOGUE_ADDRESS"];?><br>
@@ -194,7 +202,7 @@
                         <?=$activeItem["CATALOGUE_PHONE"];?><br>
                         <?=$activeItem["CATALOGUE_EMAIL"];?><br>
                         <?=$activeItem["CATALOGUE_WEBSITE"];?><br>
-                    </address>
+
                 </div>
             </div>
             <!--<div class="row">
@@ -210,7 +218,7 @@
         
         ?>
             <p class="section">
-                <span><?=__("Další filmy z tematické sekce")?> <a href="<?=$theme->getPath($filmTheme[0]["id"])?>"><?=$filmTheme[0]["name$lang"]?></a></span>
+                <span><?=__("Další filmy z tematické kategorie")?> <a href="<?=$theme->getPath($filmTheme[0]["id"])?>"><?=$filmTheme[0]["name$lang"]?></a></span>
             </p>
 			<?
             $results = $films->listingByTheme($filmTheme[0]["id"],$orderBy="title$lang", "ASC", 0, 0);
@@ -242,19 +250,19 @@
                 	<div class="medium-12 columns alphaList">
 						<?	
 							$range=range('A', 'Z');
-							array_unshift($range, "4");
-							if($lang=="EN")array_unshift($range, "3");
-							array_unshift($range, "1");
+							//array_unshift($range, "4");
+							//if($lang=="EN")array_unshift($range, "3");
+							//array_unshift($range, "1");
 							foreach ($range as $letter) {
 								$lang=$_ENV["lang"];
-								$r=$films->findById($itemId);
+								$r=$films->listingWhereLike("title$lang", "$letter%");
 								if(count($r)){
-								  echo "<a class='label filter' data-value='$letter' data-type='alpha' data-lang='$lang' href='#'>$letter</a>";
-								  if($letter=="C" && $lang!="EN") echo "<a class='label filter' data-value='Č' data-type='alpha' data-lang='$lang' href='#'>Č</a>";
+								  echo "<a class='button filter' data-value='$letter' data-type='alpha' data-lang='$lang' href='#'>$letter</a>";
+								  if($letter=="C" && $lang!="EN") echo "<a class='button filter' data-value='Č' data-type='alpha' data-lang='$lang' href='#'>Č</a>";
 								  //if($letter=="H" && $lang!="EN") echo "<a class='label filter' data-value='CH' data-type='alpha' data-lang='$lang' href='#'>CH</a>";
-								  if($letter=="R" && $lang!="EN") echo "<a class='label filter' data-value='Ř' data-type='alpha' data-lang='$lang' href='#'>Ř</a>";
-								  if($letter=="S" && $lang!="EN") echo "<a class='label filter' data-value='Š' data-type='alpha' data-lang='$lang' href='#'>Š</a>";
-								  if($letter=="Z" && $lang!="EN") echo "<a class='label filter' data-value='Ž' data-type='alpha' data-lang='$lang' href='#'>Ž</a>";
+								  if($letter=="R" && $lang!="EN") echo "<a class='button filter' data-value='Ř' data-type='alpha' data-lang='$lang' href='#'>Ř</a>";
+								  if($letter=="S" && $lang!="EN") echo "<a class='button filter' data-value='Š' data-type='alpha' data-lang='$lang' href='#'>Š</a>";
+								  if($letter=="Z" && $lang!="EN") echo "<a class='button filter' data-value='Ž' data-type='alpha' data-lang='$lang' href='#'>Ž</a>";
 								}
 							}
 						?>

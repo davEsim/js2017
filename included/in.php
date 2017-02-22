@@ -4,6 +4,7 @@ if(	$_ENV["page"] == "partneri" || $_ENV["page"] == "partners" ||
     $_ENV["page"] == "kontakty-pro-media" || $_ENV["page"] == "press-contacts" ||
 	$_ENV["page"] == "muj-program" || $_ENV["page"] == "calendar" ||
     $_ENV["page"] == "jeden-svet-pro-vsechny" ||
+    $_ENV["page"] == "jeden-svet-interaktivne" ||
 	$_ENV["page"] == "foto-z-filmu" || $_ENV["page"] == "film-photos" ||
 	$_ENV["page"] == "brusel-mista-projekci" || $_ENV["page"] == "brussel-cinemas" ||
 	$_ENV["page"] == "brusel-program" || $_ENV["page"] == "brussel-programme" ||

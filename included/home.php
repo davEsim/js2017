@@ -55,70 +55,40 @@
 
         <? include_once("included/partials/socialFeedTwitter.php"); ?>
     </div>
-	<div class="medium-6 columns">
+	<div class="medium-3 columns">
         <? if ($_ENV["lang"]=="CZ"){	?>
             <div class="responsive-embed widescreen">
-                <video class="" style="max-width: 585px; margin-left: 1em" controls preload>
+                <video class="" style="max-width: 290px; margin-left: 1em" controls preload>
                     <source src="<?=$_ENV["serverPath"]?>video/JS_WEB_1_homepage.mp4" />
                 </video>
             </div>
             <div style="margin:1em; margin-top: 0">
-
-             <h4>Jeden svět pro všechny</h4>
-            <p>
-                Právo na kulturní využití patří mezi základní lidská práva. Proto se letos Jeden svět pokouší zbourat alespoň část bariér a otevřít se lidem s různými druhy znevýhodnění.
-                Zveme na festival nevidomé a slabozraké, neslyšící a nedoslýchavé, lidi s mentálním postižením, s omezením hybnosti a seniory. <a href="jeden-svet-pro-vsechny"><strong>Čtěte více</strong></a>
-            </p>
-
+                <h4>Jeden svět pro všechny</h4>
+                <p>
+                    Právo na kulturní využití patří mezi základní lidská práva. Proto se letos Jeden svět pokouší zbourat alespoň část bariér a otevřít se lidem s různými druhy znevýhodnění.
+                    Zveme na festival nevidomé a slabozraké, neslyšící a nedoslýchavé, lidi s mentálním postižením, s omezením hybnosti a seniory. <a href="jeden-svet-pro-vsechny"><strong>Čtěte více</strong></a>
+                </p>
             </div>
-        <?}else{?>
-
-            <? include_once("included/partials/homeGalleries.php"); ?>
-        <?}?>
-        <div class="row collapse marginTop1">
-            <div class="medium-6 columns">
-                <!--<div class="blockY text-center">
-                    <p></p>
-                    <button type="button" id="slideToNewsletter" class="primary hollow large radius button"><span class="fi-at-sign"></span> Newsletter</button>
-                    <p><?=__("Odebírejte naše novinky")?></p>
-                </div>-->
-
-            </div>
-            <div class="medium-6 columns">
-
-            </div>
-        </div>
-
+        <? } ?>
     </div>
-</div>
-<div class="row">
-    <div class="medium-3 columns"> <!-- id="owApp" -->
-        <!--
-        <div class="block text-center">
+    <div class="medium-3 columns">
+
+        <div class="block mobile text-center">
             <h5><i class="fi-mobile-signal"></i> <?=__("Mobilní aplikace")?></h5>
-            <img src="<?=$_ENV["serverPath"]?>imgs/icons/qr.png">
+            <h6 >iOS</h6>
+            <img class="qr" src="<?=$_ENV["serverPath"]?>imgs/mobile/jeden-svet-iOS.png"><br>
             <img src="<?=$_ENV["serverPath"]?>imgs/icons/appStore.svg">
-            <img src="<?=$_ENV["serverPath"]?>imgs/icons/googlePlay.png">
+            <hr>
+            <h6>Android</h6>
+            <img class="qr" src="<?=$_ENV["serverPath"]?>imgs/mobile/jeden-svet-android.png"><br>
+            <img src="<?=$_ENV["serverPath"]?>imgs/icons/googlePlay-v2.png">
         </div>
-
-        <div>
-
-        </div>
-        <div class="blockY text-center">
-            <p></p>
-            <button type="button" id="slideToNewsletter" class="primary hollow large radius button"><span class="fi-at-sign"></span> Newsletter</button>
-            <p><?=__("Odebírejte naše novinky")?></p>
-        </div>
-        <div class="block text-center" style="background-color: black; color:white">
-            <a href="http://www.<?=$_ENV["lang"] == "CZ" ? "jedensvet" : "oneworld"?>.cz/archive2" target="_blank"><img src="<?=$_ENV["serverPath"]?>imgs/JedenSvet_archiv_<?=$_ENV["lang"]?>_neg.png"></a>
-            <p class="marginTop1"><?=__("Uplynulé ročníky")?></p>
-        </div>
-        -->
     </div>
 </div>
+
 <!-- ============================= newsletter ======================================================================= -->
 
-<div class="row marginTop1">
+<div class="row collapse marginTop1">
     <div class="medium-9 columns" id="registrationForm">
     <h2><?=__("Chci dostávat newsletter")?></h2>
     <div class="row">

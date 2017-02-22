@@ -8,8 +8,8 @@ $regionPersons = new xRegionPersons($db, "xRegionPersons");
 $images = new Images($db, "media");
 $logos = $images->getAllForItem("xRegionCities",$regionId);
 
-if($regionCity["FBlink"]){?><a target="_blank" title="Facebook <?=$regionCity["xRegionCities"]?>" href="<?=$regionCity["FBlink"]?>"><img src="<?=$_ENV["serverPath"]?>imgs/logo-fb.png" alt="Facebook <?=$regionCity["xRegionCities"]?>" /></a><? }?>
-<? if($regionCity["TWlink"]){?><a target="_blank" title="Twitter <?=$regionCity["xRegionCities"]?>" href="<?=$regionCity["TWlink"]?>"><img src="<?=$_ENV["serverPath"]?>imgs/logo-tw.png" alt="Twitter <?=$regionCity["xRegionCities"]?>" /></a><? }?>
+if($regionCity["FBlink"]){?><a class="regionSocial" target="_blank" title="Facebook <?=$regionCity["xRegionCities"]?>" href="<?=$regionCity["FBlink"]?>"><img src="<?=$_ENV["serverPath"]?>imgs/logo-fb-120.png" alt="Facebook <?=$regionCity["xRegionCities"]?>" /></a><? }?>
+<? if($regionCity["TWlink"]){?><a class="regionSocial" target="_blank" title="Twitter <?=$regionCity["xRegionCities"]?>" href="<?=$regionCity["TWlink"]?>"><img src="<?=$_ENV["serverPath"]?>imgs/logo-tw-120.png" alt="Twitter <?=$regionCity["xRegionCities"]?>" /></a><? }?>
 <?
 if($regionCity["TWlink"] || $regionCity["FBlink"]){?>
 	<hr />

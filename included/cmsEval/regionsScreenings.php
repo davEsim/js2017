@@ -103,14 +103,14 @@ if($lang == "CZ"){
 	<div class="medium-6 columns regionsList">
     	<?
 		foreach($regionScreeningsDays AS $regionScreeningsDay){
-			echo "<a class='label filter' data-type='day' data-value='".$regionScreeningsDay["date"]."' data-city='$regionCity'>".czechFullDayNameFromDate($regionScreeningsDay["date"])." ".invertDatumFromDB($regionScreeningsDay["date"],1)."</a>";
+			echo "<a class='small button regionFilter' data-type='day' data-value='".$regionScreeningsDay["date"]."' data-city='$regionCity'>".czechFullDayNameFromDate($regionScreeningsDay["date"])." ".invertDatumFromDB($regionScreeningsDay["date"],1)."</a>";
 		}
 		?>
     </div>
     <div class="medium-6 columns regionsList">
     	<?
 		foreach($regionScreeningsPlaces AS $regionScreeningsPlace){
-			echo "<a class='label filter' data-type='place' data-value='".$regionScreeningsPlace["id"]."' data-city='$regionCity'>".substr($regionScreeningsPlace["xRegionPlaces"],strpos($regionScreeningsPlace["xRegionPlaces"],":")+1)."</a>";
+			echo "<a class='small button regionFilter' data-type='place' data-value='".$regionScreeningsPlace["id"]."' data-city='$regionCity'>".substr($regionScreeningsPlace["xRegionPlaces"],strpos($regionScreeningsPlace["xRegionPlaces"],":")+1)."</a>";
 		}
 		?>
     </div>
@@ -185,40 +185,3 @@ if($lang == "CZ"){
         </table>
 	</div>
 </div><!--row-->
-<script type="text/javascript">
-	$(document).ready(function(){
-		$(".filter").on("click",function(event){ 
-			event.preventDefault();
-			$("#fullProgram").css("display", "block");
-			$('html, body').animate({
-				scrollTop: ($("#elementtoScrollToID").offset().top-100)
-			 }, 2000);
-	
-			
-			type = $(this).attr("data-type");
-			value = $(this).attr("data-value");
-			city = $(this).attr("data-city");
-			lang = "<?=$lang?>";
-	
-			$.ajax({
-				url:'../included/ajax/regionScreeningFilter.php', 
-				data:{type:type, value:value, city:city, lang:lang},
-				type:'GET',  
-				dataType: 'html',
-				beforeSend: function(){
-					$("#regionScreeningsFilterAjaxContent").append("<div class='ajaxLoading'><img src='imgs/ajax-loader.gif'> Loading...</div>").show(1000);
-				},
-				success: function(html, textSuccess){
-					$("#regionScreeningsFilterAjaxContent").html(html);
-					
-				},
-				complete: function(){
-				},
-				error: function(xhr, textStatus, errorThrown){	
-					alert("Nastala chyba "+errorThrown);
-				}
-			});
-		});
-	});
-
-</script>

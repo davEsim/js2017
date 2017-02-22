@@ -177,10 +177,8 @@ include_once("../../data/private/2017/config.php");
                     	<a href="./<?=$region["seo"]?>"><h3><?=pageContentCol($_ENV["regionId"], "name$lang");?></h3></a>
                         <p><?=invertDatumFromDB($region["fromDate"],1)?> &ndash; <?=invertDatumFromDB($region["toDate"],1)?></p>
                     </div>
-                    <div class="medium-1 columns regionHome">
-                    	<a href="./<?=$region["seo"]?>"><b class="fi-home"></b></a>
-                    </div>
-                    <div class="medium-8 columns">
+
+                    <div class="medium-9 columns">
 						<? generateOneLevelMenu($_ENV["regionId"], true);?>
                 	</div>
                 </div>
@@ -218,7 +216,7 @@ include_once("../../data/private/2017/config.php");
 
 
     <script src="<?=$_ENV["serverPath"]?>assets/js/app.js"></script>
-    <script type="text/javascript" src="<?=$_ENV["serverPath"]?>js/default.js?v=12"></script>
+    <script type="text/javascript" src="<?=$_ENV["serverPath"]?>js/default.js?v=<?=filemtime("js/default.js")?>"></script>
     <script>lang = "<?=$lang?>"</script>
     <? if($routing["extraJS"]){?><script type="text/javascript" src="<?=$_ENV["serverPath"]?>js/<?=$routing["extraJS"]?>.js?v=3"></script><?}?>
     

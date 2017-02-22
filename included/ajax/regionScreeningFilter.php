@@ -2,7 +2,7 @@
 session_start();
 include_once("../../php/funcs.php");
 spl_autoload_register('autoload_class_multiple_directory');
-include_once("../../php/connection.php");
+include_once("../../../../data/private/2017/connection.php");
 
 
 $_ENV["lang"]= $lang = $_GET["lang"];

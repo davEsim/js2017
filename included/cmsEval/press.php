@@ -9,7 +9,7 @@
 
 </style>
 <?
-if($_POST["pw"] == "press2016"){
+if($_POST["pw"] == "filmPhotos2017"){
 
 
 	$lang = $_ENV["lang"];
@@ -30,7 +30,7 @@ if($_POST["pw"] == "press2016"){
 		foreach($imgs AS $img){
 			$path="../download/imgs/small/".$img["seo"];
 			$pathFull="../download/imgs/".$img["seo"];
-			$absPathFull=$_SERVER['DOCUMENT_ROOT']."/2016/download/imgs/".$img["seo"];
+			$absPathFull=$_SERVER['DOCUMENT_ROOT']."/2017/download/imgs/".$img["seo"];
 			list($width, $height, $type, $attr) = getimagesize($absPathFull);
 			//print_r(getimagesize($pathFull));
 			$titles = explode("/",$img["media"]);

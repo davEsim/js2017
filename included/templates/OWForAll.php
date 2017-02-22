@@ -65,7 +65,8 @@
                                         <?
                                          if($i==1){
                                          ?>
-                                             <p>Program bude zveřejněn v druhé polovině února.</p>
+                                             <a href="program-po-dnech" class="medium button">Program po dnech</a><br>
+                                             <a href="program-kin" class="medium button">Program kin</a>
                                          <?
                                          }else {
                                              $films = new xInflictionFilms($db, "xInflictionFilms");

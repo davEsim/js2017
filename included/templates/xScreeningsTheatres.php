@@ -1,50 +1,11 @@
 <style>
-	#screeningList table{
-		border:0;
-		border-collapse:collapse;
-		width:100%;
-	}
-		#screeningList tr{
-			background-color:white;
-			border-bottom: 1px dotted #ddd;
-		}
-			#screeningList tr .blockTable tr{
-				border:0;
-			}
-			#screeningList tr.active{
-				border:0px;
-				background-color:#eee;
-			}
-				#screeningList tr.active span.filmTitle{
-					font-size:1.3em;
-					font-weight:bold;	
-				}
-		#screeningList td{
-			vertical-align:top;
-			text-align:left;	
-			padding-left:0;
-			font-size:1em;
-			font-weight:300;
-		}
-            #screeningList td i{
-                font-size: 1.7em;
-            }
+    table
+
+
 		.time{
 			width:50px;
 		}
-		#screeningList td td{
-			padding-left:0;	
-		}
-		#screeningList .extraScreeningTitle{
-			text-transform:uppercase;
-			/*font-weight:bold;	*/
-		}
-		#screeningList span.label{
-			text-transform: uppercase !important;	
-		}
-	.tabs-content{
-		min-height:500px;	
-	}
+
 	
 	.filmDetailContent{
 		display:none;
@@ -88,11 +49,11 @@
 
 			?>
                 <li class="accordion-item <?=(!$i++)?'is-active':''?> text-center" data-accordion-item>
-                    <a href="#" class="accordion-title"><? if($lang == "CZ") echo $screeningsTheatre["name"];else echo $screeningsTheatre["longName"];?></a>
+                    <a href="#" class="accordion-title"><?=$screeningsTheatre["theatreTitle$lang"]?></a>
                     <div class="accordion-content" data-tab-content>
 
                         <div class="content <?=($i==1)?"active":""?>" id="panel<?=$i?>">
-                            <h2><? if($lang == "CZ") echo $screeningsTheatre["name"];else echo $screeningsTheatre["longName"];?></h2>
+                            <h2><?=$screeningsTheatre["theatreTitle$lang"]?></h2>
                             <p class="credits"><? if($lang == "CZ") echo $screeningsTheatre["address"];else echo $screeningsTheatre["addressEN"];?></p>
                             <table>
                                 <?php
@@ -117,7 +78,7 @@
                                 <? if($opening){ //je to zahájení ?>
                                     <div class="extraScreeningTitle"><?=$theatreScreening["addition$lang"]?></div>
                                 <? }?>
-                                <a class="filmDetail" data-filmId="<?=$theatreScreening["fid"]?>" data-screenId="<?=$theatreScreening["sid"]?>" data-lang="<?=$_ENV["lang"]?>"><?=$theatreScreening["title$lang"]?></a> / <?=$theatreScreening["TITLE_ORIGINAL"]?>
+                                <a class="filmDetail" data-filmId="<?=$theatreScreening["fid"]?>" data-screenId="<?=$theatreScreening["sid"]?>" data-lang="<?=$_ENV["lang"]?>"><?=$theatreScreening["title$lang"]?></a>
                             </td>
                             <?
                             }elseif($theatreScreening["type"] == "Film Package"){						// film vlastně není film, ale jen název balíčku (hand made by Kalenda :-))
@@ -169,11 +130,11 @@
 
                                             $guestsString = "";
                                             foreach($theatreScreeningGuests AS $theatreScreeningGuest){
-                                                $guestsString.="<strong>".$theatreScreeningGuest["fName"]." ".$theatreScreeningGuest["sName"]."</strong>, ".$theatreScreeningGuest["profession$lang"]."<br>";
+                                                $guestsString.="".$theatreScreeningGuest["fName"]." ".$theatreScreeningGuest["sName"].", ".$theatreScreeningGuest["profession$lang"]."";
                                             }
                                             ?>
 
-                                            <span  class="label tooltips" title="<?=$guestsString?>"><?=__("Debata s hosty")?></span>
+                                            <span data-tooltip aria-haspopup="true" class="has-tip label" data-disable-hover="false" title="<?=$guestsString?>"><?=__("Debata s hosty")?></span>
                                         <?
                                         }
 

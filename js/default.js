@@ -58,7 +58,7 @@ $(document).ready(function(){
 			type:'GET',  
 			dataType: 'html',
 			beforeSend: function(){
-				$("#ajaxVisitorProgramContent").append("<div class='ajaxLoading'><img src='imgs/ajax-loader.gif'> Loading...</div>").show(1000);
+				$("#ajaxVisitorProgramContent").append("<div class='ajaxLoading'><img src='imgs/layout/loading.gif'> Loading...</div>").show(1000);
 			},
 			success: function(html, textSuccess){
 				$("#ajaxVisitorProgramContent").html(html);
@@ -86,8 +86,8 @@ $(document).ready(function(){
 		var tr = $(this).parent().parent();
 		$("#s"+screenId).css("display","table-row");
 		//$(this).replaceWith( "<span class='filmTitle'>" + $(this).text() + "</span>" );
-		$(this).css("color","#eee");
-        $(this).parent().css("color","#eee");
+		$(this).css("color","#ccc");
+        $(this).parent().css("color","#ccc");
 		tr.addClass("active");
 		$.ajax({
 			url:'../included/ajax/filmDetail.php', 
@@ -95,7 +95,7 @@ $(document).ready(function(){
 			type:'GET',  
 			dataType: 'html',
 			beforeSend: function(){
-				$("#s"+screenId+" .ajaxContent").append("<div class='ajaxLoading'><img src='imgs/ajax-loader.gif'> Loading...</div>").show(1000);
+				$("#s"+screenId+" .ajaxContent").append("<div class='ajaxLoading'><img src='imgs/layout/loading.gif'> Loading...</div>").show(1000);
 			},
 			success: function(html, textSuccess){
 				$("#s"+screenId+" .ajaxContent").html(html);
@@ -130,7 +130,7 @@ $(document).ready(function(){
 			type:'GET',  
 			dataType: 'html',
 			beforeSend: function(){
-				$("#s"+screenId+" .ajaxContent").append("<div class='ajaxLoading'><img src='imgs/ajax-loader.gif'> Loading...</div>").show(1000);
+				$("#s"+screenId+" .ajaxContent").append("<div class='ajaxLoading'><img src='imgs/layout/loading.gif'> Loading...</div>").show(1000);
 			},
 			success: function(html, textSuccess){
 				$("#s"+screenId+" .ajaxContent").html(html);
@@ -143,6 +143,79 @@ $(document).ready(function(){
 			}
 		});
 	});
+
+    // program filter on region homepage //////////////////////////////////////////////////////////////////////
+
+    $(".regionFilter").on("click",function(event){
+        event.preventDefault();
+        $("#fullProgram").css("display", "block");
+        $('html, body').animate({
+            scrollTop: ($("#elementtoScrollToID").offset().top-100)
+        }, 2000);
+
+
+        type = $(this).attr("data-type");
+        value = $(this).attr("data-value");
+        city = $(this).attr("data-city");
+
+
+        $.ajax({
+            url:'../included/ajax/regionScreeningFilter.php',
+            data:{type:type, value:value, city:city, lang:lang},
+            type:'GET',
+            dataType: 'html',
+            beforeSend: function(){
+                $("#regionScreeningsFilterAjaxContent").append("<div class='ajaxLoading'><img src='imgs/layout/loading.gif'> Loading...</div>").show(1000);
+            },
+            success: function(html, textSuccess){
+                $("#regionScreeningsFilterAjaxContent").html(html);
+
+            },
+            complete: function(){
+            },
+            error: function(xhr, textStatus, errorThrown){
+                alert("Nastala chyba "+errorThrown);
+            }
+        });
+    });
+
+    // region events filter  //////////////////////////////////////////////////////////////////////
+
+
+    $(".filterEventRegion").on("click",function(event){
+        event.preventDefault();
+        $("#fullProgram").css("display", "block");
+        $('html, body').animate({
+            scrollTop: ($("#elementtoScrollToID").offset().top-100)
+        }, 2000);
+
+
+        type = $(this).attr("data-type");
+        value = $(this).attr("data-value");
+        city = $(this).attr("data-city");
+        lang = "<?=$lang?>";
+
+        $.ajax({
+            url:'../included/ajax/regionEventFilter.php',
+            data:{type:type, value:value, city:city, lang:lang},
+            type:'GET',
+            dataType: 'html',
+            beforeSend: function(){
+                $("#regionEventsFilterAjaxContent").append("<div class='ajaxLoading'><img src='imgs/ajax-loader.gif'> Loading...</div>").show(1000);
+            },
+            success: function(html, textSuccess){
+                $("#regionEventsFilterAjaxContent").html(html);
+
+            },
+            complete: function(){
+            },
+            error: function(xhr, textStatus, errorThrown){
+                alert("Nastala chyba "+errorThrown);
+            }
+        });
+    });
+
+
 	// film short detail brussel //////////////////////////////////////////////////////////////////////
 	$(".filmDetailBrussel").click(function(event){ 
 		event.preventDefault();
@@ -164,7 +237,7 @@ $(document).ready(function(){
 			type:'GET',  
 			dataType: 'html',
 			beforeSend: function(){
-				$("#s"+screenId+" .ajaxContent").append("<div class='ajaxLoading'><img src='imgs/ajax-loader.gif'> Loading...</div>").show(1000);
+				$("#s"+screenId+" .ajaxContent").append("<div class='ajaxLoading'><img src='imgs/layout/loading.gif'> Loading...</div>").show(1000);
 			},
 			success: function(html, textSuccess){
 				$("#s"+screenId+" .ajaxContent").html(html);

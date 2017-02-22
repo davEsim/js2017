@@ -2,7 +2,7 @@
 session_start();
 include_once("../../php/funcs.php");
 spl_autoload_register('autoload_class_multiple_directory');
-include_once("../../php/connection.php");
+include_once("../../../../data/private/2017/connection.php");
 
 
 $_ENV["lang"]= $lang = $_GET["lang"];
@@ -43,8 +43,8 @@ if(count($filteredEvents)){
                 foreach($filteredEvents AS $filteredEvent){
                         echo "<div class='medium-4 columns end'>\n";
                                     //echo getFirstMedia("xNews", $event["id"], 0, "", "", "img", "");
-                                    echo "<label class='secondary label'>".$filteredEvent["xRegionEventTypes$lang"]."</label>";									
-                                    echo "<h4><a href='http://www.jedensvet.cz/2016/".string2domainName(urldecode($_GET["city"]))."-doprovodne-akce/".$filteredEvent["eid"]."-".string2domainName($filteredEvent["title"])."'>".$filteredEvent["title"]."</a></h4>";
+
+                                    echo "<h4><a href='http://www.jedensvet.cz/2017/".string2domainName(urldecode($_GET["city"]))."-doprovodne-akce/".$filteredEvent["eid"]."-".string2domainName($filteredEvent["title"])."'>".$filteredEvent["title"]."</a></h4>";
                                     echo "<p>".showItemDateFromTo($filteredEvent["datumFrom"], $filteredEvent["datumTo"]);
 										if($filteredEvent["time"]) echo " | ".$filteredEvent["time"]."h.";
 									echo "</p>";

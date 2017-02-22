@@ -25,24 +25,22 @@
             </p>
 
             <?
-			$results = $films->listingByTheme($activeItem["id"],"title$lang", "ASC", 0, 0);
-			echo "<div class='row films listing'>";
-			$i=0;
-			foreach($results AS $result){
-				if($result["title$lang"]){
-					echo "<div class='medium-3 columns end'>\n";
-								echo "<a href='".$films->getPath($result["id"], "filmy-a-z").string2domainName($result["title$lang"])."'>";
-									echo "<img src='".modifyImgPathfromSB($result["imageUrl"],2)."'>";
-									echo "<h2>".$result["title$lang"]."</h2>";
-								echo "</a>";	
-								echo "<p>".showStringPart($result["synopsys$lang"]," ",300)."</p>";
-					echo "</div>\n";
-					if(!(++$i % 4)) echo "</div>\n<div class='row listing'>";
-				}
-			}
-			echo "</div>";
-
-        
+                $results = $films->listingByTheme($activeItem["id"], "title$lang", "ASC", 0, 0);
+                echo "<div class='row films listing'>";
+                $i = 0;
+                foreach ($results AS $result) {
+                    if ($result["title$lang"]) {
+                        echo "<div class='medium-3 columns end'>\n";
+                        echo "<a href='" . $films->getPath($result["id"], "filmy-a-z") . string2domainName($result["title$lang"]) . "'>";
+                        echo "<img src='" . modifyImgPathfromSB($result["imageUrl"], 2) . "'>";
+                        echo "<h2>" . $result["title$lang"] . "</h2>";
+                        echo "</a>";
+                        echo "<p>" . showStringPart($result["synopsys$lang"], " ", 300) . "</p>";
+                        echo "</div>\n";
+                        if (!(++$i % 4)) echo "</div>\n<div class='row listing'>";
+                    }
+                }
+                echo "</div>";
         //---- seznam --------------------------------------------------------------------------
         
         ?>

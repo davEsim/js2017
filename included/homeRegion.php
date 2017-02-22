@@ -33,8 +33,8 @@ $regionSeo = pageContentCol($regionId, "seoUrl$lang");
 
     	<h2>Program</h2>
         <div id="elementtoScrollToID"></div>
-        <? //include_once("included/cmsEval/regionsScreenings.php"); ?>
-        <p>Program bude zveřejněn v průběhu února.</p>
+        <? include_once("included/cmsEval/regionsScreenings.php"); ?>
+        <!--<p>Program bude zveřejněn v průběhu února.</p>-->
 	</div>
     <div class="medium-3 columns">
      	<? include_once("included/partials/cols/regionHomeRightCol.php");?>

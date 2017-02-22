@@ -17,7 +17,7 @@ $db->query("TRUNCATE TABLE xPackages");
 $db->query("TRUNCATE TABLE xFilms_xFilmThemes");
 $db->query("TRUNCATE TABLE xFilmRegions");
 //$db->query("TRUNCATE TABLE xFilmThemes"); // taky jenom při prvním exportu, pak zakomentovat
-$db->query("TRUNCATE TABLE xFilmParams");
+//$db->query("TRUNCATE TABLE xFilmParams");
 $db->query("TRUNCATE TABLE xFilms_xFilmRegions");
 $db->query("TRUNCATE TABLE xGuests");
 

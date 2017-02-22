@@ -62,8 +62,7 @@ class xFilms extends Items{
 	
 	public function getParams($filmId){
 		$params=array(":filmId" => $filmId);
-        $r=$this->db->queryOne("SELECT * FROM xFilmParams WHERE id = :filmId", $params);
-		
+        $r=$this->db->queryOne("SELECT * FROM xFilmParams WHERE id_xFilms = :filmId", $params);
 		return $r; 
 	}
 	

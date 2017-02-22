@@ -1,47 +1,9 @@
 <style>
-    #screeningList table{
-        border:0;
-        border-collapse:collapse;
-        width:100%;
-    }
-    #screeningList tr{
-        background-color:white;
-        border-bottom: 1px dotted #ddd;
-    }
-    #screeningList tr .blockTable tr{
-        border:0;
-    }
-    #screeningList tr.active{
-        border:0px;
-        background-color:#eee;
-    }
-    #screeningList tr.active span.filmTitle{
-        font-size:1.3em;
-        font-weight:bold;
-    }
-    #screeningList td{
-        vertical-align:top;
-        text-align:left;
-        padding-left:0;
-        font-size:1em;
-        font-weight:300;
-    }
+
     .time{
         width:50px;
     }
-    #screeningList td td{
-        padding-left:0;
-    }
-    #screeningList .extraScreeningTitle{
-        text-transform:uppercase;
-        /*font-weight:bold;	*/
-    }
-    #screeningList span.label{
-        text-transform: uppercase !important;
-    }
-    .tabs-content{
-        min-height:500px;
-    }
+
 
     .filmDetailContent{
         display:none;
@@ -161,7 +123,7 @@
                                     <? if($opening){ //je to zahájení ?>
                                         <div class="extraScreeningTitle"><?=$dayScreening["addition$lang"]?></div>
                                     <? }?>
-                                    <a class="filmDetail" data-filmId="<?=$dayScreening["fid"]?>" data-screenId="<?=$dayScreening["sid"]?>" data-lang="<?=$_ENV["lang"]?>"><?=$dayScreening["title$lang"]?></a> / <?=$dayScreening["TITLE_ORIGINAL"]?>
+                                    <a class="filmDetail" data-filmId="<?=$dayScreening["fid"]?>" data-screenId="<?=$dayScreening["sid"]?>" data-lang="<?=$_ENV["lang"]?>"><?=$dayScreening["title$lang"]?></a>
                                 </td>
                                 <?
                                 }elseif($dayScreening["type"] == "Film Package"){						// film vlastně není film, ale jen název balíčku (hand made by Kalenda :-))
@@ -212,11 +174,11 @@
                                             if(count($dayScreeningGuests)){
                                                 $guestsString = "";
                                                 foreach($dayScreeningGuests AS $dayScreeningGuest){
-                                                    $guestsString.="<strong>".$dayScreeningGuest["fName"]." ".$dayScreeningGuest["sName"]."</strong>, ".$dayScreeningGuest["profession$lang"]."<br>";
+                                                    $guestsString.="".$dayScreeningGuest["fName"]." ".$dayScreeningGuest["sName"].", ".$dayScreeningGuest["profession$lang"]."";
                                                 }
                                                 ?>
 
-                                                <span  class="label tooltips" title="<?=$guestsString?>"><?=__("Debata s hosty")?></span>
+                                                <span data-tooltip aria-haspopup="true" class="has-tip label" data-disable-hover="false" title="<?=$guestsString?>"><?=__("Debata s hosty")?></span>
                                             <?
                                             }
 

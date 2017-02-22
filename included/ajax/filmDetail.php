@@ -9,6 +9,6 @@ $lang = $_GET["lang"];
 
 $film = $db->queryOne("SELECT * FROM xFilms WHERE id=?", array($_GET["filmId"]));
 echo "<img src='".$film["imageUrl"]."' />";
-echo "<h3>".$film["title$lang"]."<small> / ".$film["TITLE_ORIGINAL"]."</small></h3>";
+echo "<h3>".$film["title$lang"]."</h3>";
 echo "<p>".showStringPart($film["synopsys$lang"], " ",350)."</p>";
 ?>
