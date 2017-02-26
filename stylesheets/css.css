@@ -1,10 +1,31 @@
 
+@media screen and (max-width: 39.9375em) {
+    .orbit-caption{
+        width: 95%;
+        font-size: 1.2em;
+        line-height: 1em;
+
+
+    }
+        .orbit-caption a{
+
+        }
+}
+
+
 .fb-page{
     margin-right: 1em;
 
 }
 .block{
     padding: .5em;
+}
+
+.label.success{
+    background-color:#66cc33;
+    color:white;
+    cursor: pointer;
+    cursor: hand;
 }
 
 .paddingTop2{
@@ -126,6 +147,11 @@ h1{
 .credits{
     font-size: .9rem;
     line-height: 1.3rem;
+    color:#828282;
+}
+h2 small, h3 small{
+    font-size: .5em;
+    color: #828282;
 }
 .filter{
     margin-right: .5rem;
@@ -161,11 +187,27 @@ table tr{
     border-bottom: 1px solid #f2f2f2;
 }
 
+.filmDetailScreenings td{
+    background-color: #f2f2f2;
+    border-bottom: 1px solid white;
+}
+
+table.centrumScreening{
+    margin-bottom: 0;
+}
+    table.centrumScreening p{
+        margin-bottom: 0;
+    }
+
 
 table tbody td{
     padding: .5em;
     margin: 0;
 
+}
+
+.tabs-content h3{
+    margin-top: 2rem;
 }
 
 .accordionScreenings .tabs-title a, .accordionScreeningsTheatres .tabs-title a{
@@ -206,10 +248,16 @@ table tbody td{
 
 /* home ----------------------------------------------------------------------------- */
 
+.mobile{
+    margin-left: 1em;
+    border:2px dashed #09f;
+}
+
 .mobile h5{
     font-size: 1rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
 .mobile span{
@@ -217,10 +265,10 @@ table tbody td{
     font-weight: normal;
 }
 .mobile img{
-    max-width: 120px;
-    margin-bottom: 1em;
+
 }
     .mobile img.qr{
+        margin-bottom: 1em;
 
     }
 
