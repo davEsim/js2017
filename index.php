@@ -218,7 +218,7 @@ include_once("../../data/private/2017/config.php");
     <script src="<?=$_ENV["serverPath"]?>assets/js/app.js"></script>
     <script type="text/javascript" src="<?=$_ENV["serverPath"]?>js/default.js?v=<?=filemtime("js/default.js")?>"></script>
     <script>lang = "<?=$lang?>"</script>
-    <? if($routing["extraJS"]){?><script type="text/javascript" src="<?=$_ENV["serverPath"]?>js/<?=$routing["extraJS"]?>.js?v=3"></script><?}?>
+    <? if($routing["extraJS"]){?><script type="text/javascript" src="<?=$_ENV["serverPath"]?>js/<?=$routing["extraJS"]?>.js?v=4"></script><?}?>
     
 	<!-- google tracker ------------------------------------------------------------- --> 
 	<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script> 

@@ -73,15 +73,23 @@
     </div>
     <div class="medium-3 columns">
 
-        <div class="block mobile text-center">
-            <h5><i class="fi-mobile-signal"></i> <?=__("Mobilní aplikace")?></h5>
-            <h6 >iOS</h6>
-            <img class="qr" src="<?=$_ENV["serverPath"]?>imgs/mobile/jeden-svet-iOS.png"><br>
-            <img src="<?=$_ENV["serverPath"]?>imgs/icons/appStore.svg">
-            <hr>
-            <h6>Android</h6>
-            <img class="qr" src="<?=$_ENV["serverPath"]?>imgs/mobile/jeden-svet-android.png"><br>
-            <img src="<?=$_ENV["serverPath"]?>imgs/icons/googlePlay-v2.png">
+        <div class="callout mobile">
+            <img src="<?=$_ENV["serverPath"]?>imgs/layout/mobile/mobileApp<?=$lang?>.png">
+            <h5><?=__("Stáhněte si mobilní aplikaci")?></h5>
+
+            <div class="row">
+                <div class="medium-6 columns">
+                    <h6 >iOS</h6>
+                    <img class="qr" src="<?=$_ENV["serverPath"]?>imgs/mobile/jeden-svet-iOS.png"><br>
+                    <img src="<?=$_ENV["serverPath"]?>imgs/icons/appStore.svg">
+                </div>
+                <div class="medium-6 columns">
+                    <h6>Android</h6>
+                    <img class="qr" src="<?=$_ENV["serverPath"]?>imgs/mobile/jeden-svet-android.png"><br>
+                    <img src="<?=$_ENV["serverPath"]?>imgs/icons/googlePlay-v2.png">
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

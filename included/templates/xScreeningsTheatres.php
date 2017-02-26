@@ -53,8 +53,9 @@
                     <div class="accordion-content" data-tab-content>
 
                         <div class="content <?=($i==1)?"active":""?>" id="panel<?=$i?>">
-                            <h2><?=$screeningsTheatre["theatreTitle$lang"]?></h2>
-                            <p class="credits"><? if($lang == "CZ") echo $screeningsTheatre["address"];else echo $screeningsTheatre["addressEN"];?></p>
+                            <h2><?=$screeningsTheatre["theatreTitle$lang"]?>
+                                <small><? if($lang == "CZ") echo $screeningsTheatre["address"];else echo $screeningsTheatre["addressEN"];?></small>
+                            </h2>
                             <table>
                                 <?php
                                 $theatreScreenings = $screenings->listingByTheatre($screeningsTheatre["id"]);

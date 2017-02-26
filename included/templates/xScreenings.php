@@ -75,6 +75,7 @@
 		<?php
         $screenings = new xScreenings($db, "xScreenings");
         $inflictionScreenings = new xScreenings($db, "xInflictionScreenings");
+        $xTheatreCentrum = new xTheatreCentrum($db, "xTheatreCentrum");
 
         $lang = $_ENV["lang"];
 		$screeningsDates = $screenings->dates();
@@ -107,7 +108,9 @@
                                     foreach($dayScreenings AS $dayScreening){						//	už jednotlivé projekce v jednom tabu
                                     if($dayScreening["theatreTitle$lang"]!=$actualTheatre){
                                     ?>
-                                </table><h3><?=$dayScreening["theatreTitle$lang"]?></h3><table>
+                                </table><h3><?=$dayScreening["theatreTitle$lang"]?>
+                                    <small><? if($lang == "CZ") echo $dayScreening["address"];else echo $dayScreening["addressEN"];?></small>
+                                </h3><table>
                                     <?php
                                     }
                                     $actualTheatre=$dayScreening["theatreTitle$lang"];
@@ -214,6 +217,15 @@
                                     ?>
                                 </table>
                             </div>
+                            <?
+                            $xTheatreCentrumEvents = $xTheatreCentrum->listingWhereLike("datum", $screeningsDate["date"], "time", "ASC", 0, 0);
+                            if($xTheatreCentrumEvents[0]["descr$lang"]) {
+                                echo "<h3>".__("Divácké centrum - Galerie Lucerna")." <small>Vodičkova 36, Praha 1</small></h3>";
+                                foreach ($xTheatreCentrumEvents AS $xTheatreCentrumEvent) {
+                                    if ($xTheatreCentrumEvent["descr$lang"]) echo "<table class='centrumScreening'><tr><td>".$xTheatreCentrumEvent["descr$lang"]."</td></tr></table>";
+                                }
+                            }
+                            ?>
                     </div>
                 </li>
             <?php

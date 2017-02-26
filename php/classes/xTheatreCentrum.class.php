@@ -1,0 +1,4 @@
+<?
+class xTheatreCentrum extends Items{
+}
+?>

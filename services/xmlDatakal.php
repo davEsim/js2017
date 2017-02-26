@@ -11,6 +11,7 @@ include("../../../data/private/2017/connection.php");
 include("../php/funcs.php");
 
 $db->query("TRUNCATE TABLE xFilms");
+$db->query("TRUNCATE TABLE xFilmDirectors");
 $db->query("TRUNCATE TABLE xScreenings");
 $db->query("TRUNCATE TABLE xDebateGuests");
 $db->query("TRUNCATE TABLE xPackages");
@@ -75,6 +76,22 @@ if ($stream = fopen("http://entries.jedensvet.cz/xml?sql=xml_export_images+@IDE=
 		$db->query("UPDATE xFilms SET imageUrl=? WHERE id=?", $params);
 	}
 	fclose($stream);
+}
+
+if ($stream = fopen("http://entries.jedensvet.cz/xml?sql=xml_export_directors+@IDE=".YEAR_ID."&root=root", 'r')) {
+    $xml = simplexml_load_string(stream_get_contents($stream));
+    foreach($xml->XML_DIRECTORS AS $director){
+        $id_xFilms=$director->FILM_ID;
+        $fName=$director->FIRST_NAME;
+        $sName=$director->LAST_NAME;
+        $bioEN=$director->BIOGRAPHY_ENGLISH;
+        $bioCZ=$director->BIOGRAPHY_CZECH;
+        $filmographyEN=$director->FILMOGRAPHY_ENGLISH;
+        $filmographyCZ=$director->FILMOGRAPHY_CZECH;
+        $imageUrl=$director->PHOTO;
+        $db->query("INSERT INTO xFilmDirectors VALUES ('',?,?,?,?,?,?,?,?)", array($id_xFilms, $fName, $sName, $bioCZ, $bioEN, $filmographyCZ, $filmographyEN, $imageUrl));
+    }
+    fclose($stream);
 }
 
 

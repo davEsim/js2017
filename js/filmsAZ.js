@@ -6,7 +6,7 @@
         type:'GET',
         dataType: 'html',
         beforeSend: function(){
-            $("#filmFilterAjaxContent").append("<div class='ajaxLoading'><img src='imgs/ajax-loader.gif'> Loading...</div>").show(1000);
+            $("#filmFilterAjaxContent").append("<div class='ajaxLoading'><img src='imgs/layout/loading.gif'> Loading...</div>").show(1000);
         },
         success: function(html, textSuccess){
             $("#filmFilterAjaxContent").html(html);
@@ -38,7 +38,7 @@
             type:'GET',
             dataType: 'html',
             beforeSend: function(){
-                $("#filmFilterAjaxContent").append("<div class='ajaxLoading'><img src='imgs/ajax-loader.gif'> Loading...</div>").show(1000);
+                $("#filmFilterAjaxContent").append("<div class='ajaxLoading'><img src='imgs/layout/loading.gif'> Loading...</div>").show(1000);
             },
             success: function(html, textSuccess){
                 $("#filmFilterAjaxContent").html(html);
