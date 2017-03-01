@@ -177,11 +177,11 @@
                                             if(count($dayScreeningGuests)){
                                                 $guestsString = "";
                                                 foreach($dayScreeningGuests AS $dayScreeningGuest){
-                                                    $guestsString.="".$dayScreeningGuest["fName"]." ".$dayScreeningGuest["sName"].", ".$dayScreeningGuest["profession$lang"]."";
+                                                    $guestsString.="<strong>".$dayScreeningGuest["fName"]." ".$dayScreeningGuest["sName"]."</strong>, ".$dayScreeningGuest["profession$lang"]."<br>";
                                                 }
                                                 ?>
 
-                                                <span data-tooltip aria-haspopup="true" class="has-tip label" data-disable-hover="false" title="<?=$guestsString?>"><?=__("Debata s hosty")?></span>
+                                                <span data-tooltip aria-haspopup="true" data-allow-html="true"  class="has-tip label" data-disable-hover="false" title="<?=$guestsString?>"><?=__("Debata s hosty")?></span>
                                             <?
                                             }
 

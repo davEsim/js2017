@@ -1,32 +1,32 @@
 
 <style>
+    p.back{
+        line-height: 2em !important;
+        margin: 1rem 0;
+    }
 	figure{
 		float:left;	
 		margin:0;
 		padding:0;
 	}
-	figure a{
+	figure a, .Collage img{
 		position:relative;
 		display:block;
 		border-right:1px solid transparent;
 		border-bottom:1px solid transparent;
 	}
+
 		figcaption{
 			position:absolute;
 			bottom:.5em;
 			left:.5em;
-			color:white;
-			text-shadow: 1px 1px 1px rgba(0,0,0,.75);
+			color:#fdcd00; /* #09f */
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 1.2rem;
+			text-shadow: 1px 1px 3px rgba(0,0,0,1) !important;
 		}
-		.gallery li{
-			margin:0;
-			margin-right:1px;
-			margin-bottom:1px;
-		}
-		.gallery img{
-			height:150px;
-			
-		}
+
 </style>
  
 <?
@@ -42,11 +42,11 @@ if($itemId=$_ENV["itemId"]){
 				$caption["CZ"] = $xml->channel->title;
 		}
 		echo "<h2>".$caption[$lang]."</h2><br/>";
-		echo "<p class='back'><span class='fi-arrow-left'></span> <a href='".$_ENV['serverPath'].$_ENV["page"]."'>".($lang=="CZ"? "všechny galerie" : "all galleries")."</a></p>";
-		echo "<ul class='block-grid gallery' data-clearing>";
+		echo "<p class='back'><span class='fi-thumbnails'></span> <a href='".$_ENV['serverPath'].$_ENV["page"]."'>".($lang=="CZ"? "všechny galerie" : "all galleries")."</a></p>";
+        echo "<div id='lightgallery' class='Collage'>";
 		$i=0;
 		foreach($xml->channel->item AS $item){
-			//print_r($item);
+            //print_r($item);
 			//echo $item->guid;
 			//echo $item->title;
 			ereg("src=\"(.*)\" alt", $item->description, $pathOfImage);
@@ -55,18 +55,23 @@ if($itemId=$_ENV["itemId"]){
 			//echo "<li><a href='".$pathOfFullImage."'><img style='max-height:130px' src='".$pathOfImage[1]."'/></a></li>";
 			if(strstr($item->title,"IMG_") || strstr($item->title,".jpg") || strstr($item->title,".jpeg")){
 				$item->title="";
-			}else{ 
+			}else{
 				if(strstr($item->title,"/")){
 					list($caption["CZ"], $caption["EN"])=explode("/", $item->title);
 				}else{
 					$caption["CZ"] = $xml->channel->title;
 				}
 			}
-			echo "<li><a  title='".$caption[$lang]."' href='".$pathOfFullImage."'><img src='".$pathOfImage[1]."'  data-caption='".$caption[$lang]."'/></a></li>";
+
+			    echo "<a class='Image_Wrapper' title='".$caption[$lang]."' href='".$pathOfFullImage."'><img src='".$pathOfImage[1]."'  data-caption='".$caption[$lang]."'/></a>";
+
 		}//
 		fclose($stream);
-		echo "</ul>";
-	}
+		echo "</div>";
+
+        echo "<p class='back'><span class='fi-thumbnails'></span> <a href='".$_ENV['serverPath'].$_ENV["page"]."'>".($lang=="CZ"? "všechny galerie" : "all galleries")."</a></p>";
+
+    }
 }else{
 	if ($stream = fopen("https://picasaweb.google.com/data/feed/base/user/".$_ENV["galleryUser"]."?alt=rss&kind=album&hl=cs", 'r')) {
 		
@@ -99,3 +104,4 @@ if($itemId=$_ENV["itemId"]){
 	}
 }
 ?>
+

@@ -131,11 +131,11 @@
 
                                             $guestsString = "";
                                             foreach($theatreScreeningGuests AS $theatreScreeningGuest){
-                                                $guestsString.="".$theatreScreeningGuest["fName"]." ".$theatreScreeningGuest["sName"].", ".$theatreScreeningGuest["profession$lang"]."";
+                                                $guestsString.="<strong>".$theatreScreeningGuest["fName"]." ".$theatreScreeningGuest["sName"]."</strong>, ".$theatreScreeningGuest["profession$lang"]."<br>";
                                             }
                                             ?>
 
-                                            <span data-tooltip aria-haspopup="true" class="has-tip label" data-disable-hover="false" title="<?=$guestsString?>"><?=__("Debata s hosty")?></span>
+                                            <span data-tooltip aria-haspopup="true" data-allow-html="true"    class="has-tip label" data-disable-hover="false" title="<?=$guestsString?>"><?=__("Debata s hosty")?></span>
                                         <?
                                         }
 

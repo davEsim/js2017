@@ -47,6 +47,10 @@
         font-weight: 800;
 
     }
+.callout h4{
+    margin-top: 0;
+    padding-top: 0;
+}
 h1{
     margin-bottom: .5em;
 }
@@ -139,6 +143,9 @@ h1{
 .listing h5{
     margin-top: .5em;
 }
+.listing h3{
+    margin-top: .5em;
+}
 
 .filmsVRlisting h3{
     line-height: 1em;
@@ -216,6 +223,11 @@ table tbody td{
 .has-tip{
     border: 0;
 }
+span.has-tip.label{
+    background-color: #09f;
+    color:white;
+}
+
 .label{
     background-color: #fc0;
     color:black;
@@ -274,4 +286,15 @@ table tbody td{
 
 .cards h3{
     line-height: 2.3rem;
+}
+
+/* gallery ----------------------------------------------------------------------------- */
+
+.Collage .Image_Wrapper img{
+    border: 1px solid transparent;
+    margin-right: 1px solid transparent;
+}
+
+.Image_Wrapper a{
+    opacity: 0;
 }

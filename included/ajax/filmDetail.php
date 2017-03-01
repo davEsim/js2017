@@ -8,6 +8,7 @@ include_once("../../../../data/private/2017/connection.php");
 $lang = $_GET["lang"];
 
 $film = $db->queryOne("SELECT * FROM xFilms WHERE id=?", array($_GET["filmId"]));
+//echo "<img src='".str_replace("http://", "https://", $film["imageUrl"])."' />";
 echo "<img src='".$film["imageUrl"]."' />";
 echo "<h3>".$film["title$lang"]."</h3>";
 echo "<p>".showStringPart($film["synopsys$lang"], " ",350)."</p>";

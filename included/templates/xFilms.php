@@ -129,11 +129,11 @@
                                                 if(count($dayScreeningGuests)){
                                                     $guestsString = "";
                                                     foreach($dayScreeningGuests AS $dayScreeningGuest){
-                                                        $guestsString.="".$dayScreeningGuest["fName"]." ".$dayScreeningGuest["sName"].", ".$dayScreeningGuest["profession$lang"]."";
+                                                        $guestsString.="<strong>".$dayScreeningGuest["fName"]." ".$dayScreeningGuest["sName"]."</strong>, ".$dayScreeningGuest["profession$lang"]."<br>";
                                                     }
                                                     ?>
                                                     
-                                                    <span data-tooltip aria-haspopup="true" class="label" title="<?=$guestsString?>"><?=__("Debata s hosty");?></span>
+                                                    <span data-tooltip aria-haspopup="true" class="label" data-allow-html="true" title="<?=$guestsString?>"><?=__("Debata s hosty");?></span>
                                                 <?
                                                 }
                                             ?>
@@ -154,7 +154,31 @@
                                     </tr>
 						  <?
 						  	} //foreach
-						 } //if count
+						 }else{//if count
+                            if($lang == "CZ"){
+                                ?>
+                                <p><a href="https://www.jedensvet.cz/2017/jeden-svet-interaktivne">Interaktivní dokumenty</a> budou ke zhlédnutí ve VR Space, který bude umístěn v rohu Diváckého centra v Galerii Lucerna.<br>Vstup bude zdarma.<br>Projekty jsou uváděny pouze v anglickém znění.</p>
+                                <table>
+                                    <tr><td>6. 3.</td><td>17.00–20.00</td><td>Divácké centrum - Galerie Lucerna <small>Vodičkova 36, Praha 1</small></td></tr>
+                                    <tr><td>7.–10. 3.</td><td>17.00–21.30</td><td>Divácké centrum - Galerie Lucerna <small>Vodičkova 36, Praha 1</small></td></tr>
+                                    <tr><td>11.–12. 3.</td><td>14.00–21.30</td><td>Divácké centrum - Galerie Lucerna <small>Vodičkova 36, Praha 1</small></td></tr>
+                                    <tr><td>13.–14. 3.</td><td>17.00–21.30</td><td>Divácké centrum - Galerie Lucerna <small>Vodičkova 36, Praha 1</small></td></tr>
+                                    <tr><td>15. 3.</td><td>17.00–20.00</td><td>Divácké centrum - Galerie Lucerna <small>Vodičkova 36, Praha 1</small></td></tr>
+                                </table>
+                            <?
+                            }else{
+                                ?>
+                                <p><a href="https://www.oneworld.cz/2017/thematic-categories/238-one-world-interactive">The interactive documentaries</a> will be available for viewing in the VR Space, located in one corner of the Audience Centre in the Lucerna Gallery. Free admission. The projects are only in English.</p>
+                                <table>
+                                    <tr><td>6 March 2017</td><td>17.00–20.00</td><td>Divácké centrum - Galerie Lucerna <small>Vodičkova 36, Praha 1</small></td></tr>
+                                    <tr><td>7–10 March 2017</td><td>17.00–21.30</td><td>Divácké centrum - Galerie Lucerna <small>Vodičkova 36, Praha 1</small></td></tr>
+                                    <tr><td>11–12 March</td><td>14.00–21.30</td><td>Divácké centrum - Galerie Lucerna <small>Vodičkova 36, Praha 1</small></td></tr>
+                                    <tr><td>13–14 March</td><td>17.00–21.30</td><td>Divácké centrum - Galerie Lucerna <small>Vodičkova 36, Praha 1</small></td></tr>
+                                    <tr><td>15 March 2017</td><td>17.00–20.00</td><td>Divácké centrum - Galerie Lucerna <small>Vodičkova 36, Praha 1</small></td></tr>
+                                </table>
+                            <?
+                            }
+                         }//if count
 					?>
                     </table>
 
@@ -199,7 +223,8 @@
                                 <img src="<?=$filmDirector["imageUrl"]?>">
                             </div>
                             <div class="medium-10 columns">
-                                <h5><?=$filmDirector["fName"]?> <?=$filmDirector["sName"]?></h5>
+                                <h4><?=$filmDirector["fName"]?> <?=$filmDirector["sName"]?></h4>
+                                <h5><?=__("Filmografie")?>:</h5>
                                 <?=$filmDirector["fgraphy$lang"]?>
                             </div>
                         </div>

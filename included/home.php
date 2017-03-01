@@ -76,17 +76,16 @@
         <div class="callout mobile">
             <img src="<?=$_ENV["serverPath"]?>imgs/layout/mobile/mobileApp<?=$lang?>.png">
             <h5><?=__("Stáhněte si mobilní aplikaci")?></h5>
-
             <div class="row">
                 <div class="medium-6 columns">
                     <h6 >iOS</h6>
                     <img class="qr" src="<?=$_ENV["serverPath"]?>imgs/mobile/jeden-svet-iOS.png"><br>
-                    <img src="<?=$_ENV["serverPath"]?>imgs/icons/appStore.svg">
+                    <a target="_blank" href="https://itunes.apple.com/au/app/jeden-sv%C4%9Bt-2017/id1076327046"><img src="<?=$_ENV["serverPath"]?>imgs/icons/appStore.svg"></a>
                 </div>
                 <div class="medium-6 columns">
                     <h6>Android</h6>
                     <img class="qr" src="<?=$_ENV["serverPath"]?>imgs/mobile/jeden-svet-android.png"><br>
-                    <img src="<?=$_ENV["serverPath"]?>imgs/icons/googlePlay-v2.png">
+                    <a target="_blank" href="https://play.google.com/store/apps/details?id=cz.ackee.a4f.jedensvet&hl=cs"><img src="<?=$_ENV["serverPath"]?>imgs/icons/googlePlay-v2.png"></a>
                 </div>
             </div>
 

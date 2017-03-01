@@ -23,31 +23,26 @@ include_once("../../data/private/2017/config.php");
     <link rel="icon" type="image/png" href="<?=$_ENV["serverPath"]?>imgs/layout/favicon-32x32.png" sizes="32x32" />
 	<link rel="icon" type="image/png" href="<?=$_ENV["serverPath"]?>imgs/layout/favicon-16x16.png" sizes="16x16" />
 
-    <link rel="stylesheet" href="<?=$_ENV["serverPath"]?>assets/css/app.css?v=<?=filemtime('assets/css/css/app.css') ?>" />
+    <link rel="stylesheet" href="<?=$_ENV["serverPath"]?>assets/css/app.css?v=<?=filemtime('assets/css/app.css') ?>" />
     <link rel="stylesheet" href="<?=$_ENV["serverPath"]?>stylesheets/foundation-icons/foundation-icons.css" />
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <link rel="stylesheet" href="<?=$_ENV["serverPath"]?>stylesheets/css.css?v=<?=filemtime('stylesheets/css.css') ?>" />
-    <!--
-    <link rel="stylesheet" href="<?=$_ENV["serverPath"]?>stylesheets/final.css?v=<?=filemtime('stylesheets/final.css') ?>" />
 
-    <link rel="stylesheet" href="<?=$_ENV["serverPath"]?>stylesheets/cssNoPrint.css?v=<?=filemtime('stylesheets/cssNoPrint.css') ?>" media="print" />
-
-    <link rel="stylesheet" href="<?=$_ENV["serverPath"]?>stylesheets/jquery.powertip.css" />
-
-    <script src="<?=$_ENV["serverPath"]?>js/jquery.powertip.min.js"></script>
-      -->
-
+    <? if($routing["extraJS"] == "photogallery"){?>
+        <link rel="stylesheet" href="<?=$_ENV["serverPath"]?>assets/ext/lightGallery/css/lightgallery.css?v=<?=filemtime('assets/ext/lightGallery/css/lightgallery.css') ?>" />
+        <link rel="stylesheet" href="<?=$_ENV["serverPath"]?>assets/ext/collagePlus/css/transitions.css?v=<?=filemtime('assets/ext/collagePlus/css/transitions.css') ?>" />
+    <? } ?>
     <!-- share start --> 
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56af40e1d9e46c51" async="async"></script>
     <!-- share end - start -->
     <!-- AddEvent -->
 	<script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js"></script>
     <!-- AddEvent - end -->
-    <? //if($title == "regiony"){?>
+    <? if($routing["extraJS"] == "regiony"){?>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRPOLK_IVptgP_ri5zcCg1ywKpelEkLd0" type="text/javascript"></script>
 	<script type="text/javascript" src="<?=$_ENV["serverPath"]?>js/googleMaps.js?v=<?=filemtime("js/googleMaps.js")?>"></script>
-    <? //} ?>
-    <!-- Facebook Pixel krávovina -->
+    <? } ?>
+    <!-- Facebook Pixel -->
 	<script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -219,8 +214,20 @@ include_once("../../data/private/2017/config.php");
     <script type="text/javascript" src="<?=$_ENV["serverPath"]?>js/default.js?v=<?=filemtime("js/default.js")?>"></script>
     <script>lang = "<?=$lang?>"</script>
     <? if($routing["extraJS"]){?><script type="text/javascript" src="<?=$_ENV["serverPath"]?>js/<?=$routing["extraJS"]?>.js?v=4"></script><?}?>
-    
-	<!-- google tracker ------------------------------------------------------------- --> 
+    <? if($routing["extraJS"] == "photogallery"){?>
+        <!-- gallery fullscreen -->
+        <script type="text/javascript" src="<?=$_ENV["serverPath"]?>assets/ext/lightGallery/js/lightgallery.js?v=<?=filemtime("assets/ext/lightGallery/js/lightgallery.js")?>"></script>
+        <script type="text/javascript" src="<?=$_ENV["serverPath"]?>assets/ext/lightGallery/js/lg-fullscreen.min.js?v=<?=filemtime("assets/ext/lightGallery/js/lg-fullscreen.min.js")?>"></script>
+        <script type="text/javascript" src="<?=$_ENV["serverPath"]?>assets/ext/lightGallery/js/lg-thumbnail.min.js?v=<?=filemtime("assets/ext/lightGallery/js/lg-thumbnail.min.js")?>"></script>
+        <script type="text/javascript" src="<?=$_ENV["serverPath"]?>assets/ext/lightGallery/js/lightGalleryLoad.js?v=<?=filemtime("assets/ext/lightGallery/js/lightGalleryLoad.js")?>"></script>
+
+        <!-- gallery collage -->
+        <script type="text/javascript" src="<?=$_ENV["serverPath"]?>assets/ext/collagePlus/js/jquery.collagePlus.min.js?v=<?=filemtime("assets/ext/collagePlus/js/jquery.collagePlus.min.js")?>"></script>
+        <script type="text/javascript" src="<?=$_ENV["serverPath"]?>assets/ext/collagePlus/js/jquery.removeWhitespace.min.js?v=<?=filemtime("assets/ext/collagePlus/js/jquery.removeWhitespace.min.js")?>"></script>
+        <script type="text/javascript" src="<?=$_ENV["serverPath"]?>assets/ext/collagePlus/js/collagePlusLoad.js?v=<?=filemtime("assets/ext/collagePlus/js/collagePlusLoad.js")?>"></script>
+
+    <?}?>
+        <!-- google tracker ------------------------------------------------------------- -->
 	<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script> 
     <script type="text/javascript">
     _uacct = "UA-764708-4";

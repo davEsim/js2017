@@ -20,22 +20,22 @@ $lang = $_ENV["lang"];
 							<h4><?=__("Hosté")?></h4><?=$activeItem["guests$lang"];?>
 						</div>
 					</div>
-					<div class='row'>
+					<div class='row' data-equalizer data-equalize-on="medium">
 							<div class='medium-4 columns text-center'>
-								<div class='panel'>
+								<div class='primary callout' data-equalizer-watch>
 									<i class='fi-clock'></i><p><?=invertDatumFromDB($activeItem["datum"])."<br>".$activeItem["time"];?></p>
 								</div>	
 							</div>
 							<div class='medium-4 columns text-center'>
-								<div class='panel'>
-									<i class='fi-marker'></i><br>
-									<p><strong><?=$debateTheatre["name"]?></strong><br/>
+								<div class='primary callout' data-equalizer-watch>
+									<i class='fi-marker'></i>
+									<p><strong><?=$debateTheatre["theatreTitle$lang"]?></strong><br/>
 									<?=$debateTheatre["address"]?></p>
 								</div>	
 							</div>
 							<div class='medium-4 columns text-center'>
-								<div class='panel'>
-									<i class='fi-microphone'></i><br><?=$activeItem["moderators$lang"];?>
+								<div class='primary callout' data-equalizer-watch>
+									<i class='fi-microphone'></i><?=$activeItem["moderators$lang"];?>
 								</div>	
 							</div>
 					</div>
