@@ -16,7 +16,7 @@
 						$embded=1; 
 						$fileMp4="../../download/trailers/mp4/".$activeItem["id_datakal"].".mp4";
 						$fileFlv=$_ENV["serverPath"]."download/trailers/flv/".$activeItem["id_datakal"].".flv";
-						$filmsWithoutTrailer=array(31370,31096,31753);
+						$filmsWithoutTrailer=array(33212,34751,34752,34659,34755,32820,34749);
 						if(!in_array($activeItem["id"],$filmsWithoutTrailer)){
 						//if(filesize($fileMp4)){	
 									?>
@@ -73,7 +73,7 @@
                        <?=$activeItem["DIRECTOR"]?><br>
                        <?=$activeItem["COUNTRY"]?> |&nbsp;<?=$activeItem["YEAR"]?> |&nbsp;<?=$activeItem["TIME"]?>&nbsp;min.
                     </p>
-                    <p class="addthis_sharing_toolbox"></p>
+                    <div class='addthis_sharing_toolbox'></div><br>
                     <?
 					$filmTheme = $films->findItemsInRelations($activeItem["id"],"xFilmThemes");
 					$theme = new xFilmThemes($db, "xFilmThemes");
@@ -100,7 +100,7 @@
 						 $filmScreenings=$films->screeningsWithPackages($filmScreeningIds);
 						 if(count($filmScreenings)){
 							?>
-							<table>
+							<table class="stack">
 							<?	
 							 foreach($filmScreenings AS $filmScreening){
 							?>
@@ -109,11 +109,11 @@
                                         <td><?=$filmScreening["theatreTitle$lang"]?></td>
                                         <td><? if(count($screenings->packageFilms($filmScreening["id_xFilms"]))>1){?><span class="label">Blok filmů</span><? }?></td>
                                         <td><? if($filmScreening["premiere$lang"]){?><span class="label"><?=$filmScreening["premiere$lang"]?></span><? }?></td>
-                                        <td>
+                                        <!--<td>
                                         	<? if($filmScreening["soldOut"]){?>
 												<span class="alert label"><?=__("Vyprodáno")?></span>
                                             <? }?>	
-                                        </td>
+                                        </td>-->
                                         <td>
 											<? if(!$opening && $filmScreening["addition$lang"]){ //pokud to není zahájení - zobrazim ... je to debata ?>
                                                     <? if($filmScreening["link$lang"]){?>
@@ -139,7 +139,9 @@
                                             ?>
                                         </td>
                                         <td>
-											<? if($filmScreening["soldOut"]){ ?>
+                                            <? if($screenings->dateTimeRunOut($filmScreening["date"], $filmScreening["time"])){ ?>
+                                                 <span class="secondary label"><?=($lang == "CZ")?"Vstupenky":"Tickets"?></span>
+											<? }elseif($filmScreening["soldOut"]){ ?>
                                                     <span class="alert label"><?=($lang == "CZ")?"Vyprodáno":"Sold Out"?></span>
                                             <? }elseif($filmScreening["ticketCZ"]){?>
                                                     <a target="_blank" href="<?=$filmScreening["ticket$lang"]?>"><span class="success label"><?=($lang == "CZ")?"Vstupenky":"Tickets"?></span></a>

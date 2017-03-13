@@ -10,15 +10,25 @@
         .orbit-caption a{
 
         }
+     address{
+         margin-bottom: 1em;
+     }
 }
 
+address{
+    text-align: left;
+    font-style: normal;
+    padding-left: 1em;
+}
 
 .fb-page{
     margin-right: 1em;
 
 }
 .block{
-    padding: .5em;
+    border: 2px solid  #ccc;
+    background-color: white;
+    padding-bottom: 0;
 }
 
 .label.success{
@@ -27,9 +37,19 @@
     cursor: pointer;
     cursor: hand;
 }
+.label.alert{
+    background-color: #ff0036;
+    color:white;
+}
+.label.secondary{
+    color:white;
+}
 
 .paddingTop2{
     padding-top: 2rem;
+}
+.marginTop0{
+    margin-top: 0;
 }
 
 .section{
@@ -53,11 +73,10 @@
 }
 h1{
     margin-bottom: .5em;
-}
-
-h1{
     line-height: 3.5rem;
 }
+
+
     h1 img{
         position: relative;
         top:-7px;
@@ -81,9 +100,9 @@ h1{
     min-height: 200px;
 }
 #inflictionsPage .accordion2 .tabs-title>a{
-    min-height: 100px;
+    min-height: 100px
 }
-#inflictionsPage .inflictionTheatres img, .inflictionIconsProgram img{
+#inflictionsPage .inflictionTheatres .icons img, .inflictionIconsProgram img{
     width: 2rem;
     height: 2rem;
 }
@@ -93,6 +112,12 @@ h1{
     width: 3rem;
     margin-bottom: 1rem;
 }
+.accessMap{
+    height: auto !important; width: auto !important;
+    max-width: 500px;
+    max-height: 500px;
+}
+
 
 .tabs{
     border: 0;
@@ -122,13 +147,16 @@ h1{
     display: block;
     font-size: 3em;
 }
-#inflictionVideo{
+#inflictionVideo, #ETR, #fullNoETRtext, .nD{
     display: none;
 }
 
-#ETR, #fullNoETRtext{
-    display: none;
+.inflictionIconDebate{
+    float:right;
+    height: 2rem;
+    width: 2rem;
 }
+
 
 #registrationForm{
     margin-top: 0;
@@ -192,11 +220,18 @@ table tr{
 .filmDetailContent, table tbody tr:nth-child(2n){
     /*background-color: white;*/
     border-bottom: 1px solid #f2f2f2;
+
+}
+.accordion-item table tbody tr:nth-child(2n){
+    display: none;
 }
 
+
+.filmDetailScreenings tr{
+    border-bottom: 1px solid white !important;
+}
 .filmDetailScreenings td{
     background-color: #f2f2f2;
-    border-bottom: 1px solid white;
 }
 
 table.centrumScreening{
@@ -260,6 +295,34 @@ span.has-tip.label{
 
 /* home ----------------------------------------------------------------------------- */
 
+.aktualne{
+
+}
+    .aktualne .label{
+        color:white;
+        margin-bottom: 0;
+        margin-top: 1em;
+    }
+    .aktualne h4{
+        margin-top: 0.5em;
+    }
+    .aktualne .orbit-next, .aktualne .orbit-previous{
+        top: 12.3%;
+    }
+
+.tips{
+    padding-left: 1em !important;
+}
+    .tips h4{
+        margin-top: 1.5em;
+    }
+    .tips img{
+        margin-bottom: 1em;
+    }
+    .tips .orbit-next, .tips .orbit-previous{
+        top: 9%;
+    }
+
 .mobile{
     margin-left: 1em;
     border:2px dashed #09f;
@@ -298,3 +361,156 @@ span.has-tip.label{
 .Image_Wrapper a{
     opacity: 0;
 }
+
+.lg-outer .lg-thumb-item{
+    border-radius: 0 !important;
+    border-width: 1px !important;
+}
+
+/* vote form ----------------------------------------------------------------------------- */
+
+
+#vote .inlineBlock{
+    display: inline-block;
+}
+#vote fieldset{
+    margin-top: 1rem;
+}
+#vote legend{
+    font-weight: bold;
+}
+
+#voteForm{
+    padding: 1em;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    background-color: #fc0;
+    color:#09f;
+}
+#voteForm .fi-clipboard-pencil{
+    font-size: 2.5em;
+}
+#voteForm h5{
+    font-size: 1.4em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+/* brussel ----------------------------------------------------------------------------- */
+
+    #brusselForm tr {
+        border: 0;
+    }
+    #brusselForm tr:nth-child(2n){
+        background-color: transparent !important;
+    }
+    #brusselForm tbody{
+        background-color: transparent;
+    }
+    #brusselForm td{
+        background-color: transparent;
+    }
+
+
+/* region social icons ----------------------------------------------------------------------------- */
+
+
+/*Pen code from this point on*/
+.btn {
+    clear:both;
+    white-space:nowrap;
+    font-size:12px;
+    display:inline-block;
+    border-radius:5px;
+
+    margin:2px;
+    -webkit-transition:all .5s;
+    -moz-transition:all .5s;
+    transition:all .5s;
+    overflow:hidden
+}
+
+.btn:hover {
+
+}
+
+.btn:focus {
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+.btn > span,.btn-icon > i {
+    float:left;
+    padding:14px;
+    -webkit-transition:all .5s;
+    -moz-transition:all .5s;
+    transition:all .5s;
+    line-height:1em
+}
+
+.btn > span {
+    line-height: 16px;
+    white-space:nowrap;
+    color:#FFF;
+    background:#b8b8b8;
+    text-transform: uppercase;
+}
+
+.btn:focus > span {
+    background:#9a9a9a
+}
+
+.btn-icon > i {
+    border-radius:5px 0 0 5px;
+    position:relative;
+
+    text-align:center;
+    font-size:1.35em;
+    color:#fff;
+    background:#212121
+}
+
+.btn-icon > i:after {
+    content:"";
+    border:8px solid;
+    border-color:transparent transparent transparent #222;
+    position:absolute;
+    top:13px;
+    right:-14px
+}
+
+.btn-icon:hover > i,.btn-icon:focus > i {
+    color:#FFF
+}
+
+.btn-icon > span {
+    border-radius:0 5px 5px 0
+}
+
+/*Facebook*/
+.btn-facebook:hover > i,.btn-facebook:focus > i {
+    color:#3b5998
+}
+
+.btn-facebook > span {
+    background:#3b5998
+}
+
+/*Twitter*/
+.btn-twitter:hover > i,.btn-twitter:focus > i {
+    color:#55acee
+}
+
+.btn-twitter > span {
+    background:#55acee
+}
+
+/*Instagram*/
+.btn-instagram:hover > i,.btn-instagram:focus > i {
+    color:#c13584
+}
+
+.btn-instagram > span {
+    background:#c13584
+}
+

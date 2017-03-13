@@ -364,6 +364,7 @@ else:
 		if ($_GET["table"]=="xBrusselScreenings") $list_query="SELECT t.*, f.xBrusselFilms, p.xBrusselPlaces FROM xBrusselScreenings AS t LEFT JOIN xBrusselFilms AS f ON t.id_xBrusselFilms=f.id LEFT JOIN xBrusselPlaces AS p ON t.id_xBrusselPlaces=p.id";
 		if ($_GET["table"]=="xBrusselViewers") $list_query="SELECT t.*, f.xBrusselFilms, p.xBrusselPlaces FROM xBrusselViewers AS t LEFT JOIN xBrusselScreenings AS s ON t.id_xBrusselScreenings = s.id LEFT JOIN xBrusselFilms AS f ON s.id_xBrusselFilms=f.id LEFT JOIN xBrusselPlaces AS p ON s.id_xBrusselPlaces=p.id";
         if ($_GET["table"]=="xFilmParams") $list_query="SELECT t.id, f.xFilms, t.descrCZ, t.descrEN FROM xFilmParams AS t INNER JOIN xFilms AS f ON t.id_xFilms = f.id";
+        if ($_GET["table"]=="xRegionCityAccreditations") $list_query="SELECT c.xRegionCities, t.* FROM xRegionCityAccreditations AS t INNER JOIN xRegionCities AS c ON t.id_xRegionCities = c.id";
 
         if (!IsSet($list_query)) $list_query="";
 		generateList($list_query, $orderCol, $direction, $start, $_SESSION['limit'],$rFlagsTables["id"]);

@@ -1,5 +1,5 @@
 ﻿<?
-exit("registrace ukoncena");
+//exit("registrace ukoncena");
 $lang = $_ENV["lang"];
 $itemSeo = intval($_ENV["itemSeo"]);
 
@@ -71,8 +71,8 @@ if($_POST){
 		  }
 		  include_once("./included/partials/mails/brusselRegistration.php");
 		  $mail = new PHPMailer();                                			
-		  $mail->From="komperova@czech.cz";
-		  $mail->FromName="komperova@czech.cz";
+		  $mail->From="iva.bartosova@oneworld.cz";
+		  $mail->FromName="Iva Bartošová";
 		  $mail->AddAddress($_POST["brusselViewerM"]); 			
 		  $mail->WordWrap = 50;                              // set word wrap
 		  $mail->IsHTML(true);                               // send as HTML
@@ -92,10 +92,10 @@ if(!$_POST || $message){
         	<p><?=__("Na tuto projekci není možná rezervace zdarma. Koupit")?> <a target="_blank" href="http://www.bozar.be/en" class="tiny radius label" ><?=__("vstupenky")?></a>.</p>
 	<? 	}else{?>
 		<div class="row" data-abide>
-			<div class="medium-8 columns">
+			<div class="medium-6 columns">
 				<p class="warning"><?=$message?></p>
-				<form method="post">
-					<table>
+				<form method="post" class="callout secondary">
+					<table id="brusselForm">
 						<tr><td><?=__("Jméno")?> <small><?=__("povinné")?></small></td><td><input type="text" name="brusselViewerFullName" size="30" required /></td></tr>
 						<tr><td>E-mail <small><?=__("povinné")?></small></td><td><input type="email" name="brusselViewerM" required  /></td></tr>
 						<tr class="nD"><td>E-mail</td><td><input type="email" name="email" /></td></tr>
@@ -118,23 +118,19 @@ if(!$_POST || $message){
 						}
 						?>
 					</table>
-					<div id="send"></div>
+					<div id="formSend" data-value="<?=__("Odeslat")?>"></div>
 					<input type="hidden" name="sid" value="<?=$activeBrusselScreening["id"]?>" />
 					<input type="hidden" name="pid" value="<?=$activeBrusselScreening["id_xBrusselPlaces"]?>" />
 				</form>
 			</div>
-			<div class="medium-4 columns">
+			<div class="medium-6 columns">
 				<h3><?=__("Vaše rezervace na projekci")?></h3>
 				<p><strong><?=$activeBrusselScreeningFilm["title$lang"]?></strong></p>
 				<p><?=invertDatumFromDB($activeBrusselScreening["date"],1)." | ".$activeBrusselScreening["time"]?></p>
 				<p><?=$activeBrusselScreeningPlace["xBrusselPlaces"]?><br /><?=$activeBrusselScreeningPlace["address"]?></p>
 			</div>
 		</div>
-		<script>
-			$(document).ready(function(){
-				$("#send").html("<input class='small radius button' type='submit' value='<?=__("Odeslat")?>' />");
-			});
-		</script>
+
 		<?
 	}
 }

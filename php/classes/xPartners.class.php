@@ -10,7 +10,10 @@ class xPartners extends Items{
                 echo "<a title='".$partner["xPartners"]."' href='".$partner["url"]."' target='_blank'><img src='".$path."' alt='".$partner["xPartners"]."'></a>";
             if($columns) echo "</div>";
             ++$i;
-            if($columns &&  $i==26) echo "</div><div class='row logos'><div class='medium-12 columns'><hr></div></div> <div class='row logos'>";
+            if($columns &&  $i==27){
+                echo "</div><div class='row logos'><div class='medium-12 columns'><hr></div></div> <div class='row logos'>";
+                $i = 0;
+            }
             elseif($columns && (!($i%6))) echo "</div><div class='row logos'>";
             else {};
         }

@@ -10,7 +10,7 @@ if($lang=="CZ"){
 	Místo projekce: ".$activeBrusselScreeningPlace["xBrusselPlaces"].", ".$activeBrusselScreeningPlace["address"]."<br />
 	Datum a čas: ".invertDatumFromDB($activeBrusselScreening["date"],1)." | ".$activeBrusselScreening["time"]."<br />
   </p>";
-  $link="http://www.jedensvet.cz/2016/brusel-zruseni-rezervace/$uid";
+  $link="http://www.jedensvet.cz/2017/brusel-zruseni-rezervace/$uid";
   $body.="<p>Z projekce se můžete odhlásit kliknutím na odkaz: <a href='$link'>$link</a></p>"; 
   $body.="
     <p>Užijte si festival!<br />
@@ -32,7 +32,7 @@ if($lang=="CZ"){
 	Venue: ".$activeBrusselScreeningPlace["xBrusselPlaces"].", ".$activeBrusselScreeningPlace["address"]."<br />
 	Date and time: ".invertDatumFromDB($activeBrusselScreening["date"],1)." | ".$activeBrusselScreening["time"]."<br />
   </p>";
-  $link="http://www.oneworld.cz/2016/brussel-cancel-reservation/$uid";
+  $link="http://www.oneworld.cz/2017/brussel-cancel-reservation/$uid";
   $body.="<p>You can cancel the registration using this link: <a href='$link'>$link</a>"; 
   $body.="
     <p>Enjoy One World Brussels!<br />

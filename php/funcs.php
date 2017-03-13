@@ -495,7 +495,7 @@ function modifyImgPathfromSB($path, $x){
 	$imgW=round($imgParams["W"]/$x);
 	$imgH=round($imgParams["H"]/$x);
 	$imgId=$imgParams["IMGID"];
-	$imgPath="http://entries.jedensvet.cz/images/filmimages/image.ashx?I=2&W=".$imgW."&H=".$imgH."&ID=0&IMGID=".$imgId;
+	$imgPath="https://images.pinf.cz/images/filmimages/image.ashx?I=2&W=".$imgW."&H=".$imgH."&ID=0&IMGID=".$imgId;
 	return $imgPath;	
 }
 ?>

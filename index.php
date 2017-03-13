@@ -27,6 +27,7 @@ include_once("../../data/private/2017/config.php");
     <link rel="stylesheet" href="<?=$_ENV["serverPath"]?>stylesheets/foundation-icons/foundation-icons.css" />
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <link rel="stylesheet" href="<?=$_ENV["serverPath"]?>stylesheets/css.css?v=<?=filemtime('stylesheets/css.css') ?>" />
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
 
     <? if($routing["extraJS"] == "photogallery"){?>
         <link rel="stylesheet" href="<?=$_ENV["serverPath"]?>assets/ext/lightGallery/css/lightgallery.css?v=<?=filemtime('assets/ext/lightGallery/css/lightgallery.css') ?>" />
@@ -64,7 +65,7 @@ include_once("../../data/private/2017/config.php");
 
 
   </head>
-  <body onLoad="load()">
+  <body <?=($page == "regiony")?"onLoad='load()'":""?>>
 
   <div id="ETR">
       <? include_once("included/partials/etr.php");?>
@@ -99,8 +100,8 @@ include_once("../../data/private/2017/config.php");
     </div><!--row-->
 
     <div class="row" id="mainMenu">
-        <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
-            <button class="menu-icon" type="button" data-toggle="example-menu"></button>
+        <div class="title-bar" data-responsive-toggle="mMenu" data-hide-for="medium">
+            <button class="menu-icon" type="button" data-toggle="mMenu" data-toggle></button>
             <div class="title-bar-title">Menu</div>
         </div>
         <style>
@@ -118,7 +119,7 @@ include_once("../../data/private/2017/config.php");
                     background-color: #cacaca;
                 }
         </style>
-        <div class="top-bar">
+        <div class="top-bar" id="mMenu">
             <div class="top-bar-left">
                 <ul class="menu vertical medium-horizontal" data-responsive-menu="accordion medium-dropdown">
                     <? generateMenu(7, TRUE, $_ENV["lang"]); ?>
@@ -146,7 +147,7 @@ include_once("../../data/private/2017/config.php");
     </div><!--row-->
 
     <? if($page != "regiony"){?> 
-    <div class="row" id="secondMenu">
+    <div class="row hide-for-small-only" id="secondMenu">
         <div class="medium-12 columns">
         	<?
 			$parents = parents($rActivePage["id"]);

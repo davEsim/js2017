@@ -32,7 +32,7 @@
             foreach($results AS $result){
                 echo "<a class='card-".$i."' href='".$result["url"]."' target='_blank'>";
                         echo "<h3>".$result["title"]."</h3>";
-	                    if($result["subTitle"]) echo "<p class='show-for-large'>".$result["subTitle"]."</p>";
+	                    if($result["subTitle"]) echo "<p class='hide-for-medium-only'>".$result["subTitle"]."</p>";
                 echo "</a>";
                 $i++;
             }
@@ -47,18 +47,27 @@
 ?>
 <div class="row marginTop2 collapse show-for-medium socialFeeds">
 
-    <div class="medium-3 columns">
-
-        <? include_once("included/partials/socialFeedFB.php"); ?>
+    <div class="medium-3 columns aktualne">
+        <?  if ($_ENV["lang"]=="CZ") {
+                include_once("included/partials/xmlAktualne.php");
+            }else{
+                include_once("included/partials/socialFeedFB.php");
+            }
+        ?>
     </div>
-    <div class="medium-3 columns">
+    <div class="medium-3 columns tips">
+        <?  if ($_ENV["lang"]=="CZ") {
+            include_once("included/partials/tips.php");
+        }else{
+            include_once("included/partials/socialFeedTwitter.php");
+        }
+        ?>
 
-        <? include_once("included/partials/socialFeedTwitter.php"); ?>
     </div>
-	<div class="medium-3 columns">
+	<div class="medium-3 columns tips">
         <? if ($_ENV["lang"]=="CZ"){	?>
             <div class="responsive-embed widescreen">
-                <video class="" style="max-width: 290px; margin-left: 1em" controls preload>
+                <video class="" style="max-width: 290px;" controls preload>
                     <source src="<?=$_ENV["serverPath"]?>video/JS_WEB_1_homepage.mp4" />
                 </video>
             </div>
@@ -66,12 +75,32 @@
                 <h4>Jeden svět pro všechny</h4>
                 <p>
                     Právo na kulturní využití patří mezi základní lidská práva. Proto se letos Jeden svět pokouší zbourat alespoň část bariér a otevřít se lidem s různými druhy znevýhodnění.
-                    Zveme na festival nevidomé a slabozraké, neslyšící a nedoslýchavé, lidi s mentálním postižením, s omezením hybnosti a seniory. <a href="jeden-svet-pro-vsechny"><strong>Čtěte více</strong></a>
+                    Zveme na festival nevidomé a slabozraké, neslyšící a nedoslýchavé, lidi s mentálním postižením, s omezením hybnosti a seniory.<br><a href="jeden-svet-pro-vsechny"><strong>Čtěte více <span class="fi-arrow-right"></span> </strong></a>
                 </p>
             </div>
-        <? } ?>
+        <? }else{
+            include_once("included/partials/tips.php");
+           }
+        ?>
     </div>
-    <div class="medium-3 columns">
+    <div class="medium-3 columns text-right">
+        <? if ($_ENV["lang"]=="CZ"){	?>
+        <a href="./jak-se-vam-libil-jeden-svet" title="Formulář - Jak se vám líbil Jeden svět v Praze?">
+            <div id="voteForm">
+                <div class="row">
+                    <div class="medium-9 columns text-left">
+                        <h5>Řekněte nám jak to zlepšit</h5>
+                    </div>
+                    <div class="medium-3 columns">
+                        <span class="fi-clipboard-pencil"></span>
+                    </div>
+
+                </div>
+            </div>
+        </a>
+        <?
+        }
+        ?>
 
         <div class="callout mobile">
             <img src="<?=$_ENV["serverPath"]?>imgs/layout/mobile/mobileApp<?=$lang?>.png">
@@ -90,14 +119,25 @@
             </div>
 
         </div>
+
+        <div class="block text-center" >
+            <a href="http://www.<?=$_ENV["lang"] == "CZ" ? "jedensvet" : "oneworld"?>.cz/archive2" target="_blank"><img src="<?=$_ENV["serverPath"]?>imgs/JedenSvet_archiv_<?=$_ENV["lang"]?>.png"></a>
+            <p class="marginTop1"><?=__("Uplynulé ročníky")?></p>
+        </div>
+
     </div>
+</div>
+<div class="row collapse marginTop1">
+    <?
+    include_once("included/partials/homeGalleries.php");
+    ?>
 </div>
 
 <!-- ============================= newsletter ======================================================================= -->
 
 <div class="row collapse marginTop1">
-    <div class="medium-9 columns" id="registrationForm">
-    <h2><?=__("Chci dostávat newsletter")?></h2>
+    <div class="medium-12 columns" id="registrationForm">
+    <h3><?=__("Chci dostávat newsletter")?></h3>
     <div class="row">
 	<div class="medium-6 columns ">
         <form method="post"  action="./registrace">
@@ -151,11 +191,5 @@
                     ?>
     </div>
     </div><!--row-->
-    </div>
-        <div class="medium-3 columns">
-        <div class="block text-center" style="background-color: black; color:white">
-            <a href="http://www.<?=$_ENV["lang"] == "CZ" ? "jedensvet" : "oneworld"?>.cz/archive2" target="_blank"><img src="<?=$_ENV["serverPath"]?>imgs/JedenSvet_archiv_<?=$_ENV["lang"]?>_neg.png"></a>
-            <p class="marginTop1"><?=__("Uplynulé ročníky")?></p>
-        </div>
-    </div>
+
 </div><!--row--> 

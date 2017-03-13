@@ -34,15 +34,10 @@ if(strlen($itemId) == 32){
 				<p><?=$activeBrusselScreeningPlace["xBrusselPlaces"]?><br /><?=$activeBrusselScreeningPlace["address"]?></p>
 				<form method="post">
 					<input type="hidden" name="uid" value="<?=$itemId?>" />
-					<div id="send"></div>
+					<div id="formSend"  data-value="<?=__("Zrušit rezervaci")?>"></div>
 				</form>
 			</div>
 		</div>
-		<script>
-			$(document).ready(function(){
-				$("#send").html("<input class='small radius alert button' type='submit' value='<?=__("Zrušit rezervaci")?>' />");
-			});
-		</script>
 		<?
 	}
 }

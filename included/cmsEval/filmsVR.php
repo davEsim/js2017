@@ -9,8 +9,8 @@ $films = $films->listing("", "id", "ASC", 0, 0);
         ?>
             <div class="row filmsVRlisting">
                 <div class="medium-8 columns">
-                    <h3><?=$film["titleCZ"]?></h3>
-                    <?=$film["descrCZ"]?>
+                    <h3><?=$film["title$lang"]?></h3>
+                    <?=$film["descr$lang"]?>
                 </div>
                 <div class="medium-4 columns">
 

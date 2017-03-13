@@ -7,10 +7,18 @@ $regionPersons = new xRegionPersons($db, "xRegionPersons");
 $images = new Images($db, "media");
 $logos = $images->getAllForItem("xRegionCities",$regionId);
 ?>
-<? if($regionCity["FBlink"]){?><a class="regionSocial" target="_blank" title="Facebook <?=$regionCity["xRegionCities"]?>" href="<?=$regionCity["FBlink"]?>"><img src="<?=$_ENV["serverPath"]?>imgs/logo-fb-120.png" alt="Facebook <?=$regionCity["xRegionCities"]?>" /></a><? }?>
-<? if($regionCity["TWlink"]){?><a class="regionSocial" target="_blank" title="Twitter <?=$regionCity["xRegionCities"]?>" href="<?=$regionCity["TWlink"]?>"><img src="<?=$_ENV["serverPath"]?>imgs/logo-tw-120.png" alt="Twitter <?=$regionCity["xRegionCities"]?>" /></a><? }?>
+<? if($regionCity["FBlink"]){?>
+    <a class="btn btn-icon btn-facebook" href="<?=$regionCity["FBlink"]?>"><i class="fa fa-facebook"></i><span>Facebook</span></a>
+<? }?>
+<? if($regionCity["TWlink"]){?>
+    <a class="btn btn-icon btn-twitter" href="<?=$regionCity["FBlink"]?>"><i class="fa fa-twitter"></i><span>Twitter</span></a>
+<? }?>
+<? if($regionCity["IGlink"]){?>
+    <a class="btn btn-icon btn-instagram" href="<?=$regionCity["IGlink"]?>"><i class="fa fa-instagram"></i><span>Instagram</span></a>
+<? }?>
+
 <?
-if($regionCity["TWlink"] || $regionCity["FBlink"]){?>
+if($regionCity["TWlink"] || $regionCity["FBlink"] || $regionCity["IGlink"]){?>
 	<hr />
 <?
 }

@@ -57,11 +57,35 @@
                                                 </video>
                                                 <?
                                             }
-                                            echo $infliction["text"]
+                                            echo $infliction["text"];
+                                            $screenings = new xScreenings($db, "xScreenings");
+                                            if($i == 2) $infl = "oko";
+                                            if($i == 3) $infl = "ucho";
+                                            if($i == 4) $infl = "masky";
+                                            if($i == 5) $infl = "starik";
+                                            $inflictionScreenings = $screenings->inflictions($infl);
+                                            if($i>1 && $i <= 5){
+                                                ?>
+                                                <h4>Projekce pro vás</h4>
+                                                <table>
+                                                    <?
+                                                    foreach ($inflictionScreenings AS $inflictionScreening) {
+                                                        ?>
+                                                        <tr>
+                                                            <td nowrap><?= invertDatumFromDB($inflictionScreening["date"], 1) ?>&nbsp;<?= substr($inflictionScreening["time"], 0, 5) ?></td>
+                                                            <td><?= $inflictionScreening["title$lang"] ?></td>
+                                                            <td><?= $inflictionScreening["theatreTitle$lang"] ?></td>
+                                                            <td><?= $inflictionScreening["address"] ?></td>
+                                                        </tr>
+                                                    <?
+                                                    }
+                                            }
                                         ?>
+                                            </table>
+
                                     </div>
                                     <div class="medium-5 columns">
-                                        <h4>Filmy pro vás</h4>
+                                        <h4 class="marginTop0">Filmy pro vás</h4>
                                         <?
                                          if($i==1){
                                          ?>
@@ -138,7 +162,7 @@
                                     <div class="row">
                                         <div class="medium-12 columns">
                                             <h3><?=$inflictionTheatre["title"]?>, <small style="color:#555555"><?=$inflictionTheatre["address"]?></small></h3>
-                                            <div>
+                                            <div class="icons">
                                                 <?
                                                  inflictionIcons($inflictionTheatre["icons"]);
                                                 ?>
@@ -187,10 +211,14 @@
                                                 <?=$inflictionTheatre["tickets"]?>
                                             </div>
                                         </div>
-                                        <div class="medium-4 end columns">
-                                            <div class="callout primary" data-equalizer-watch>
+                                        <div class="medium-8 end columns">
+                                            <div class="" data-equalizer-watch>
                                                 <h4>Orientace v kině</h4>
                                                 <?=$inflictionTheatre["orientation"]?>
+                                                <? if($inflictionTheatre["id"]<8){?>
+                                                <img class="accessMap" src="<?=$_ENV["serverPath"]?>imgs/maps/<?=$inflictionTheatre["id"]?>.png">
+                                                <?}?>
+
                                             </div>
                                         </div>
                                     </div>

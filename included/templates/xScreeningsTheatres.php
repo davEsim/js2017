@@ -63,7 +63,7 @@
                                 foreach($theatreScreenings AS $theatreScreening){								// už jednotlivé projekce v rámci kina
                                 if($theatreScreening["date"]!=$actualDate){									// grupování podle data
                                 ?>
-                            </table><h3><?=invertDatumFromDB($theatreScreening["date"])?></h3><table>
+                            </table><h3><?=invertDatumFromDB($theatreScreening["date"])?></h3><table class="stack">
                                 <?
                                 }
                                 $actualDate=$theatreScreening["date"];
@@ -109,12 +109,12 @@
                                     }
                                     // ostatní labels k filmu --------------------------------------------------------------------------------------------------------------------
                                     ?>
-                                    <td>
+                                    <td class="">
                                         <? if($theatreScreening["premiere$lang"] != ""){ //premiery ?>
                                             <span class="label"><?=$theatreScreening["premiere$lang"]?></span>
                                         <? }?>
                                     </td>
-                                    <td>
+                                    <td class="">
                                         <? if(!$opening && $theatreScreening["addition$lang"]){ //pokud to není zahájení - zobrazim ... je to debata ?>
                                             <? if($theatreScreening["link$lang"]){?>
                                                 <a href="<?=$theatreScreening["link$lang"]?>"><span class="label"><?=$theatreScreening["addition$lang"]?></span></a>
@@ -124,7 +124,7 @@
 
                                         <? }?>
                                     </td>
-                                    <td>
+                                    <td class="">
                                         <?
                                         $theatreScreeningGuests = $screenings->debateGuests($theatreScreening["id"]); // nejdřív vytáhnu hosty debaty po projekci
                                         if(count($theatreScreeningGuests)){
@@ -142,7 +142,9 @@
                                         ?>
                                     </td>
                                     <td>
-                                        <? if($theatreScreening["soldOut"]){ ?>
+                                        <? if($screenings->dateTimeRunOut($theatreScreening["date"], $theatreScreening["time"])){ ?>
+                                        <span class="secondary label"><?=($lang == "CZ")?"Vstupenky":"Tickets"?></span>
+                                        <? }elseif($theatreScreening["soldOut"]){ ?>
                                             <span class="alert label"><?=__("Vyprodáno")?></span>
                                         <? }elseif($theatreScreening["ticketCZ"]){?>
                                             <a target="_blank" href="<?=$theatreScreening["ticket$lang"]?>"><span class="success label"><?=($lang == "CZ")?"Vstupenky":"Tickets"?></span></a>

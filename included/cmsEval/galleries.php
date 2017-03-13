@@ -81,6 +81,7 @@ if($itemId=$_ENV["itemId"]){
 		foreach($xml->channel->item AS $item){
 			//print_r($item);
 			//echo $item->guid;
+
 			$pathToGallery=ltrim(str_replace("entry","feed",$item->guid),"http://");
 			//echo $item->description;
 			ereg("src=\"(.*)\" alt", $item->description, $pathOfImage);
@@ -91,7 +92,7 @@ if($itemId=$_ENV["itemId"]){
 			}else{
 				$caption["CZ"] = $item->title;
 			}
-			if(strstr($item->pubDate,"2016")){
+			if(strstr($item->pubDate,"2017") && $idOfGallery[1] != 5936095942556489473 && $idOfGallery[1] != 6373593476976162401){
 				echo "	<figure>
 							<a href='".$_SERVER['REQUEST_URI']."/".$idOfGallery[1]."'>
 								<img src='".$thumb."'/>

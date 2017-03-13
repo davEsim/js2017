@@ -9,10 +9,6 @@ if($page == "program-kin" || $page == "cinemas") $routing =  array("template" =>
 if($page == "tematicke-kategorie" || $page == "thematic-categories") $routing =  array("template" => "xFilmThemes", "metaTable" => "xFilmThemes", "metaTitle" => "name$lang", "metaDescr" => "text$lang");
 if($page == "panelove-debaty" || $page == "panel-debates") $routing =  array("template" => "xDebates", "metaTable" => "xDebates", "metaTitle" => "title$lang", "metaDescr" => "text$lang", "filtrParam" => "panelová");
 if($page == "masterclasses" || $page == "masterclasses") $routing =  array("template" => "xDebates", "metaTable" => "xDebates", "metaTitle" => "title$lang", "metaDescr" => "text$lang", "filtrParam" => "režisérská");
-//if($page == "hlavni-porota" || $page == "grand-jury") $routing =  array("template" => "xJuryMembers", "metaTable" => "xJuryMembers", "metaTitle" => "name$lang", "metaDescr" => "descr$lang", "filtrParam" => 1);
-//if($page == "porota-vaclava-havla" || $page == "vaclav-havel-jury") $routing =  array("template" => "xJuryMembers", "metaTable" => "xJuryMembers", "metaTitle" => "name$lang", "metaDescr" => "descr$lang", "filtrParam" => 2);
-//if($page == "porota-ceskeho-rozhlasu" || $page == "czech-radio-jury") $routing =  array("template" => "xJuryMembers", "metaTable" => "xJuryMembers", "metaTitle" => "name$lang", "metaDescr" => "descr$lang", "filtrParam" => 3);
-//if($page == "studentska-porota" || $page == "students-jury") $routing =  array("template" => "xJuryMembers", "metaTable" => "xJuryMembers", "metaTitle" => "name$lang", "metaDescr" => "descr$lang", "filtrParam" => 4);
 if($page == "ceny-a-poroty" || $page == "awards-and-juries") $routing =  array("template" => "xJuries", "metaTable" => "xJuries", "metaTitle" => "name$lang", "metaDescr" => "descr$lang");
 
 if($page == "tym" || $page == "team") $routing = array("template" => "xTeamMembers", "metaTable" => "xTeamMembers", "metaTitle" => "name$lang", "metaDescr" => "positionCZ");

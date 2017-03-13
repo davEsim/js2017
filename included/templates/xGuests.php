@@ -41,8 +41,9 @@
 		  	echo "<div class='panel guest'>";
                 echo "<div class='row'>";
                     echo "<div class='medium-5 columns'>\n";
+                        $imgLink = str_replace("http://entries.jedensvet.cz","https://images.pinf.cz/", $result["photo"]);
 					    if($result["photo"]){                  
-							echo "<img src='".$result["photo"]."'>";
+							echo "<img src='".$imgLink."'>";
 						}else{
 							echo "<img src='../imgs/noImage.png'>";
 						}

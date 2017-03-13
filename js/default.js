@@ -1,6 +1,11 @@
 ﻿
 $(document).ready(function(){
 
+    // forms ///////////////////////////////////////////////////////////
+
+    $("#formSend").html("<input class='small radius button' type='submit' value='"+$("#formSend").attr("data-value")+"' />");
+
+
     // zobrazení ETR textů ////////////////////////////////////
 
 
@@ -19,9 +24,6 @@ $(document).ready(function(){
         $(".limitedAccessGroup").click(function(){
             $(".limitedAccessGroupContent").slideToggle();
         });
-
-
-    /*$('.tooltips').powerTip({placement: 's'});*/
 
 
     // odrolovat na newsletter form ////////////////////////////////////

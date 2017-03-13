@@ -15,8 +15,9 @@ foreach($juries AS $jury) {
     ?>
     <div class="row">
         <div class="medium-12 columns">
+            <a name="<?=string2domainName($jury["name$lang"])?>"></a>
             <?if($i++) echo "<hr>";?>
-            <h2><?= $jury["name$lang"] ?></h2>
+            <h2><?=$jury["name$lang"] ?></h2>
             <?=$jury["text$lang"] ?>
         </div>
     </div>

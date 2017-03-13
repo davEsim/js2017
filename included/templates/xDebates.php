@@ -68,7 +68,9 @@ $lang = $_ENV["lang"];
         foreach($results AS $result){
             echo "<div class='medium-4 columns end'>\n";
                         echo getFirstMedia("xDebates", $result["id"], 0, "", "", "img", "");
-                        echo "<h2><a href='".$debates->getPath($result["id"],"",$debateType)."'>".$result["title$lang"]."</a></h2>";
+                        $iconString=($result["id"] == 22)?"<span data-tooltip aria-haspopup='true' class='has-tip' data-disable-hover='false'
+                      title='tlumočení do znakového jazyka'><img class='inflictionIconDebate' src='https://www.jedensvet.cz/2017/imgs/icons/inflictions/ruce.svg'></span>":"";
+                        echo "<h2><a href='".$debates->getPath($result["id"],"",$debateType)."'>".$result["title$lang"]."</a> $iconString</h2>";
 						echo "<p class='credits'>".invertDatumFromDB($result["datum"])." | ".$result["time"]."<br/>";
 						echo __("Po filmu")." ".$debates->getRelCol($result["id_xFilms"], "xFilms", "title$lang")."</p>";
                         echo "<p>".showStringPart($result["text$lang"]," ",150)."</p>";

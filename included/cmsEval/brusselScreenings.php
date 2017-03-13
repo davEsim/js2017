@@ -170,13 +170,7 @@ if($lang == "CZ"){
                                     <? }?> 
                                 </td>
                                 <td width="100px">
-                                <?	
-									if($brusselScreening["sid"] == 1){?>
-										<a target="_blank" href="http://www.bozar.be/en/activities/112226-opening-one-world-brussels" class="tiny radius label" ><?=__("vstupenky")?></a>
-                                <?        
-									}elseif($brusselScreening["sid"] == 13){?>
-										<a target="_blank" href="http://www.bozar.be/en/activities/112296-vaclav-havel-a-life-in-freedom---andrea-sedlackova" class="tiny radius label" ><?=__("vstupenky")?></a>
-								<?	}elseif($countOfViewers >= $brusselScreening["countOfViewers"]){?>
+                                <?if($countOfViewers >= $brusselScreening["countOfViewers"]){?>
 										<span class="tiny radius alert label" ><?=__("obsazeno")?></span>
 								<? 	}else{?>
                                 		<a class="tiny radius success button" href="<?=$resPath.$brusselScreening["sid"]?>"><?=__("rezervace")?></a>
@@ -189,8 +183,8 @@ if($lang == "CZ"){
                                     </div>
                                 	<p>
                                     <? if($brusselScreening["fid"] != 99999) {?>
-                                    	<a href="#" data-reveal-id="videoModal" class="tiny radius button"><?=__("trailer")?></a>
-                                    	<a class='tiny radius button' href='<?=$filmPath.$brusselScreening["fid"]."-".string2domainName($brusselScreening["xBrusselFilms"])?>'><?=__("více o filmu")?></a>
+                                    	<a class='tiny button' data-open="trailerModal<?=$brusselScreening["fid"]?>"><?=__("trailer")?></a>
+                                    	<a class='tiny button' href='<?=$filmPath.$brusselScreening["fid"]."-".string2domainName($brusselScreening["xBrusselFilms"])?>'><?=__("více o filmu")?></a>
 									<? }?>
                                    
                                     </p>

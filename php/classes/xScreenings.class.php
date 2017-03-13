@@ -16,6 +16,29 @@ class xScreenings extends Items{
 		$link.=string2domainName($title);
 		return $link;
 	}
+
+    public function dateTimeRunOut($screeningDate, $screeningTime){
+        list($year, $month, $day) = explode("-", $screeningDate);
+        list($hours, $mins, $secs) = explode(":", $screeningTime);
+        $screenTimeStamp = mktime($hours, $mins, $secs, $month, $day, $year);
+        if($screenTimeStamp < time()) { // runOut
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function inflictions($infliction){
+        $params = array(":infliction" => "%".$infliction."%");
+        $r=$this->db->queryAll("SELECT * FROM ".$this->table." AS s
+                                INNER JOIN xInflictionScreenings AS inflS ON s.id = inflS.id
+                                INNER JOIN xTheatres AS t ON s.id_xTheatres = t.id
+                                INNER JOIN xFilms AS f ON s.id_xFilms = f.id
+                                WHERE inflS.icons LIKE :infliction
+                                ORDER BY date ASC, s.time ASC", $params);
+
+        return $r;
+    }
 		
 	public function dates(){
         $r=$this->db->queryAll("SELECT date FROM ".$this->table."

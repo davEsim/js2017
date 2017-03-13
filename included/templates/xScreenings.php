@@ -32,44 +32,7 @@
     	<h1><?=$metaTitle?></h1>
     </div>
 </div>
-<!--
-<div class="row limitedAccessGroup" title="Zobrazit projekce pro osoby s postizenim">
-    <div class="medium-12 columns">
-        <div class="round tiny button">
-            <i class="fi-wheelchair"></i>&nbsp;
-            <i class="fi-blind"></i>&nbsp;
-            <i class="fi-hearing-aid"></i>&nbsp;
-            <i class="fi-universal-access"></i>
-        </div>
-    </div>
-</div>
 
-<div class="row limitedAccessGroupContent">
-    <div class="medium-12 columns">
-        <h2>Projekce pro divaky s omezenim</h2>
-        <table>
-            <tr><td><p><i class="fi-calendar smaller"></i> <strong>14.3.</strong> <i class="fi-clock smaller"></i> <strong>15:00 hodin</strong> <i class="fi-marker smaller"></i> <strong>Lucerna - velký sal</strong>: <a href="https://goo.gl/maps/JNHiDRmH1uv" target="_blank">Vodičkova 704/36, 110 00 Praha 1</a></p><h3><a href="#">Ve stínu minulosti</a> / A Haunting History</h3><p>Jižní Súdán vznikl jako samostatný stát v roce 2011, po vleklé občanské válce. Súdánec Anuol se vrací domů po více než dvaceti letech života v Británii, kde vystudoval práva. Své znalosti chce využít k rozvoji právního systému v nové zemi.Zatímco se potýká s úřady i každodenními potížemi při budování své firmy,...</p></td>
-                <td><i class="fi-wheelchair tooltips" title="Projekce pro osoby se sníženou hybností, osoby na vozíku, osoby malého vzrůstu"></i><br>
-                    <i class="fi-blind" title="Projekce pro osoby nevidomé a slabozraké"></i><br>
-                    <i class="fi-hearing-aid tooltips" title="Projekce pro osoby nedoslýchavé"></i>
-                <td><img src="http://entries.jedensvet.cz/images/filmimages/image.ashx?I=2&W=640&H=380&ID=0&IMGID=8024"> </td></td>
-            </tr>
-
-            <tr><td><p><i class="fi-calendar smaller"></i> <strong>15.3.</strong> <i class="fi-clock smaller"></i> <strong>20:00 hodin</strong> <i class="fi-marker smaller"></i> <strong>Lucerna - velký sal</strong>: <a href="https://goo.gl/maps/JNHiDRmH1uv" target="_blank">Vodičkova 704/36, 110 00 Praha 1</a></p><h3><a href="#">Bábušky z Černobylu</a> / The Babushkas of Chernobyl</h3><p>Po černobylské katastrofě se bezprostřední okolí jaderného reaktoru stalo zemí nikoho. Opuštěné ulice měst i vesnic jsou dnes zarostlé stromy, jejich korunami šumí vítr. Uprostřed této zakázané zóny přesto existuje život. V dřevěných chatrčích tu přebývají bábušky, ženy, které se po nucené evakuaci vrátily ilegálně...</p></td>
-                <td><i class="fi-wheelchair tooltips" title="Projekce pro osoby se sníženou hybností, osoby na vozíku, osoby malého vzrůstu"></i><br>
-                    <i class="fi-blind" title="Projekce pro osoby nevidomé a slabozraké"></i>
-                <td><img src="http://entries.jedensvet.cz/images/filmimages/image.ashx?I=2&W=640&H=380&ID=0&IMGID=8057"> </td></td>
-            </tr>
-            <tr><td><p><i class="fi-calendar smaller"></i> <strong>16.3.</strong> <i class="fi-clock smaller"></i> <strong>19:00 hodin</strong> <i class="fi-marker smaller"></i> <strong>Lucerna - velký sal</strong>: <a href="https://goo.gl/maps/JNHiDRmH1uv" target="_blank">Vodičkova 704/36, 110 00 Praha 1</a></p><h3><a href="#">Behemoth</a> / Behemoth</h3><p>Behemoth je biblická obluda, nepřemožitelná stvůra země. Po tisících letech se ukazuje, že onou obludou je sám člověk, který se rozhodl znásilnit nitro země, aby získal její bohatství. Netuší, že ničením krajiny to zdaleka nekončí. Obluda totiž nakonec začne zákonitě požírat samu sebe. Mocné filmové podobenství si...</p></td>
-                <td>
-                    <i class="fi-blind" title="Projekce pro osoby nevidomé a slabozraké"></i><br>
-                    <i class="fi-hearing-aid tooltips" title="Projekce pro osoby nedoslýchavé"></i>
-                <td><img src="http://entries.jedensvet.cz/images/filmimages/image.ashx?I=2&W=640&H=380&ID=0&IMGID=7977"> </td></td>
-            </tr>
-        </table>
-    </div>
-</div>
--->
 <div class="row">
     <div class="medium-12 columns">
 		<?php
@@ -80,13 +43,7 @@
         $lang = $_ENV["lang"];
 		$screeningsDates = $screenings->dates();
 		
-		$actualDate =  date("Y-m-d");
-		$showDate = "2017-03-06";
-		foreach($screeningsDates AS $screeningsDate){
-			if($screeningsDate["date"] == $actualDate){
-				$showDate = $screeningsDate["date"];
-			}
-		}
+
 		?>
         <ul class="accordionScreenings" data-responsive-accordion-tabs="tabs medium-accordion small-accordion large-tabs"  data-active-collapse="true">
         	<?php
@@ -96,10 +53,10 @@
 				$tab=czechFullDayNameFromDate($screeningsDate["date"])."<br>";
 				$tab.=invertDatumFromDB($screeningsDate["date"],1);
 			?>
-                <li class="accordion-item <?=(!$i++)?'is-active':''?> text-center" data-accordion-item>
+                <li class="accordion-item <?=($screeningsDate["date"] == date("Y-m-d"))?'is-active':''?> text-center" data-accordion-item>
                     <a href="#" class="accordion-title"><?=$tab?></a>
                     <div class="accordion-content" data-tab-content>
-                            <div class="content <?=($screeningsDate["date"]==$showDate)?"active":"";?>" id="panel<?=$i?>">
+                            <div class="content">
                                 <h2><?=invertDatumFromDB($screeningsDate["date"],1)?></h2>
                                 <table>
                                     <?php
@@ -110,7 +67,7 @@
                                     ?>
                                 </table><h3><?=$dayScreening["theatreTitle$lang"]?>
                                     <small><? if($lang == "CZ") echo $dayScreening["address"];else echo $dayScreening["addressEN"];?></small>
-                                </h3><table>
+                                </h3><table class="stack">
                                     <?php
                                     }
                                     $actualTheatre=$dayScreening["theatreTitle$lang"];
@@ -156,12 +113,12 @@
                                         }
                                         // ostatní labels k filmu --------------------------------------------------------------------------------------------------------------------
                                         ?>
-                                        <td>
+                                        <td class="">
                                             <? if($dayScreening["premiere$lang"] != ""){ //premiery ?>
                                                 <span class="label"><?=$dayScreening["premiere$lang"]?></span>
                                             <? }?>
                                         </td>
-                                        <td>
+                                        <td class="">
                                             <? if(!$opening && $dayScreening["addition$lang"]){ //pokud to není zahájení - zobrazim ... je to debata ?>
                                                 <? if($dayScreening["link$lang"]){?>
                                                     <a href="<?=$dayScreening["link$lang"]?>"><span class="label"><?=$dayScreening["addition$lang"]?></span></a>
@@ -170,7 +127,7 @@
                                                 <? }?>
                                             <? }?>
                                         </td>
-                                        <td>
+                                        <td class="">
                                             <?
 
                                             $dayScreeningGuests = $screenings->debateGuests($dayScreening["sid"]); // nejdřív vytáhnu hosty debaty po projekci
@@ -188,7 +145,11 @@
                                             ?>
                                         </td>
                                         <td>
-                                            <? if($dayScreening["soldOut"]){ ?>
+
+                                            <? if($screenings->dateTimeRunOut($dayScreening["date"], $dayScreening["time"])){ ?>
+                                                <span class="secondary label"><?=($lang == "CZ")?"Vstupenky":"Tickets"?></span>
+
+                                            <? }elseif($dayScreening["soldOut"]){ ?>
                                                 <span class="alert label"><?=($lang == "CZ")?"Vyprodáno":"Sold Out"?></span>
                                             <? }elseif($dayScreening["ticketCZ"]){?>
                                                 <a target="_blank" href="<?=$dayScreening["ticket$lang"]?>"><span class="success label"><?=($lang == "CZ")?"Vstupenky":"Tickets"?></span></a>
